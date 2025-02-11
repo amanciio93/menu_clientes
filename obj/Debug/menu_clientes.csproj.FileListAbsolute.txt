@@ -2,9 +2,9 @@ C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\menu_clientes.
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\menu_clientes.exe
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\menu_clientes.pdb
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.csproj.AssemblyReference.cache
-C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.Form1.resources
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.Properties.Resources.resources
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.csproj.GenerateResource.cache
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.csproj.CoreCompileInputs.cache
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.exe
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.pdb
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.FormCadastroCliente.resources

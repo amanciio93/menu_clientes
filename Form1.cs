@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace menu_clientes
 {
-    public partial class Form1 : Form
+    public partial class FormCadastroCliente : Form
     {
-        public Form1()
+        public FormCadastroCliente()
         {
             InitializeComponent();
+        }
+
+        private void FormCadastroCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return) {
+                SendKeys.Send("{TAB}");
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

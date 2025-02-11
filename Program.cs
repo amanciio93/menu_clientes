@@ -16,7 +16,7 @@ namespace menu_clientes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormCadastroCliente());
         }
     }
 }
