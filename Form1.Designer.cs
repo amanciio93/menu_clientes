@@ -274,6 +274,7 @@
             this.nomeCliente.Name = "nomeCliente";
             this.nomeCliente.Size = new System.Drawing.Size(405, 25);
             this.nomeCliente.TabIndex = 0;
+            this.nomeCliente.TextChanged += new System.EventHandler(this.nomeCliente_TextChanged);
             // 
             // rg
             // 
@@ -520,6 +521,7 @@
             this.endereco.Name = "endereco";
             this.endereco.Size = new System.Drawing.Size(428, 26);
             this.endereco.TabIndex = 10;
+            this.endereco.TextChanged += new System.EventHandler(this.endereco_TextChanged);
             // 
             // bairro
             // 
@@ -532,6 +534,7 @@
             this.bairro.Name = "bairro";
             this.bairro.Size = new System.Drawing.Size(313, 26);
             this.bairro.TabIndex = 12;
+            this.bairro.TextChanged += new System.EventHandler(this.bairro_TextChanged);
             // 
             // cidade
             // 
@@ -544,6 +547,7 @@
             this.cidade.Name = "cidade";
             this.cidade.Size = new System.Drawing.Size(377, 26);
             this.cidade.TabIndex = 13;
+            this.cidade.TextChanged += new System.EventHandler(this.cidade_TextChanged);
             // 
             // fotoCliente
             // 

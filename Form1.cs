@@ -120,14 +120,14 @@ namespace menu_clientes
         {
             if (nomeCliente.Text == "")
             {
-                MessageBox.Show("Campo nome é obrigatório");
+                Funcoes.msgAlerta("Campo nome é obrigatório");
                 nomeCliente.Focus();
                 return true;
             }
 
             if (!cpf.Checked && !cnpj.Checked)
             {
-                MessageBox.Show("Selecione o tipo do documento:\rCPF ou CNPJ.");
+                Funcoes.msgAlerta("Selecione o tipo do documento:\rCPF ou CNPJ.");
                 return true;
             }
 
@@ -135,11 +135,11 @@ namespace menu_clientes
             {
                 if (cpf.Checked == true)
                 {
-                    MessageBox.Show("Informe o CPF!");
+                    Funcoes.msgAlerta("Informe o CPF!");
                 }
                 else
                 {
-                    MessageBox.Show("Informe o CNPJ!");
+                    Funcoes.msgAlerta("Informe o CNPJ!");
                 }
 
                 documento.Focus();
@@ -148,7 +148,7 @@ namespace menu_clientes
 
             if (!masculino.Checked && !feminino.Checked && !outroGenero.Checked)
             {
-                MessageBox.Show("Selecione o genero");
+                Funcoes.msgAlerta("Selecione o genero");
                 return true;
             }
 
@@ -160,7 +160,7 @@ namespace menu_clientes
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Digite uma data de nascimento válida!");
+                    Funcoes.msgErro("Digite uma data de nascimento válida!");
                     return true;
                 }
             }
@@ -172,7 +172,7 @@ namespace menu_clientes
 
         private void btNovo_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja limpar todos os campos?", "ATENÇÃO", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (Funcoes.msgConfirmar("Deseja limpar todos os campos?") == false )
                 return;
 
             id.Text = "";
@@ -244,7 +244,7 @@ namespace menu_clientes
             }
             catch (Exception)
             {
-                MessageBox.Show("Data inválida");
+                Funcoes.msgErro("Data inválida");
                 e.Cancel = true;
             }
         }
@@ -256,7 +256,7 @@ namespace menu_clientes
 
             if (estado_civil.SelectedIndex == -1)
             {
-                MessageBox.Show("Selecione um estado civil válido");
+                Funcoes.msgAlerta("Selecione um estado civil válido");
                 e.Cancel = true;
             }
         }
@@ -268,7 +268,7 @@ namespace menu_clientes
 
             if (estado.SelectedIndex == -1)
             {
-                MessageBox.Show("Selecione um estado válido");
+                Funcoes.msgAlerta("Selecione um estado válido");
                 e.Cancel = true;
             }
         }
@@ -279,7 +279,7 @@ namespace menu_clientes
                 return;
             if (cep.Text.Length < 8)
             {
-                MessageBox.Show("Formato de CEP inválido");
+                Funcoes.msgErro("Formato de CEP inválido");
                 e.Cancel = true;
             }
         }
@@ -290,25 +290,35 @@ namespace menu_clientes
 
             if (cpf.Checked && documento.Text.Replace(" ", "").Length < 11)
             {
-                MessageBox.Show("CPF Incompleto ou inválido");
+                Funcoes.msgErro("CPF Incompleto ou inválido");
                 e.Cancel = true;
             }
 
             if (cnpj.Checked && documento.Text.Replace(" ", "").Length < 14)
             {
-                MessageBox.Show("CNPJ Incompleto ou inválido.");
+                Funcoes.msgErro("CNPJ Incompleto ou inválido.");
                 e.Cancel = true;
             }
         }
 
-
-
-        /*
         private void nomeCliente_TextChanged(object sender, EventArgs e)
         {
-            nomeCliente.Text = nomeCliente.Text.ToUpper();
-            nomeCliente.SelectionStart = nomeCliente.TextLength;
+            Funcoes.priMaiuscula(nomeCliente);
         }
-        */
+
+        private void endereco_TextChanged(object sender, EventArgs e)
+        {
+            Funcoes.priMaiuscula(endereco);
+        }
+
+        private void bairro_TextChanged(object sender, EventArgs e)
+        {
+            Funcoes.priMaiuscula(bairro);
+        }
+
+        private void cidade_TextChanged(object sender, EventArgs e)
+        {
+            Funcoes.priMaiuscula(cidade);
+        }
     }
 }
