@@ -620,6 +620,7 @@
             this.btFechar.Text = " Fechar";
             this.btFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btFechar.UseVisualStyleBackColor = false;
+            this.btFechar.Click += new System.EventHandler(this.btFechar_Click);
             // 
             // btNovo
             // 
@@ -637,6 +638,7 @@
             this.btNovo.Text = " Novo";
             this.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btNovo.UseVisualStyleBackColor = false;
+            this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
             // FormCadastroCliente
             // 

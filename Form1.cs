@@ -64,7 +64,13 @@ namespace menu_clientes
 
                         cmd.Parameters.AddWithValue("@rg", rg.Text);
                         cmd.Parameters.AddWithValue("@estado_civil", estado_civil.Text);
-                        cmd.Parameters.AddWithValue("@dt_nascimento", dtNasc.Text);
+                        
+                        if (dtNasc.Text == "  /  /")
+                            cmd.Parameters.AddWithValue("@dt_nascimento", DBNull.Value); // Salvando nulo
+                        else
+                            cmd.Parameters.AddWithValue("@dt_nascimento", Convert.ToDateTime(dtNasc.Text));
+
+
                         cmd.Parameters.AddWithValue("@cep", cep.Text);
                         cmd.Parameters.AddWithValue("@endereco", endereco.Text);
                         cmd.Parameters.AddWithValue("@numero", num_casa.Text);
@@ -86,6 +92,9 @@ namespace menu_clientes
 
 
                         cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = "SELECT @@IDENTITY";
+                        id.Text = cmd.ExecuteScalar().ToString();
 
                     }
 
@@ -130,7 +139,7 @@ namespace menu_clientes
                 }
                 else
                 {
-                    MessageBox.Show("Imforme o CNPJ!");
+                    MessageBox.Show("Informe o CNPJ!");
                 }
 
                 documento.Focus();
@@ -143,10 +152,56 @@ namespace menu_clientes
                 return true;
             }
 
+            if (dtNasc.Text != "  /  /")
+            {
+                try
+                {
+                    Convert.ToDateTime(dtNasc.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Digite uma data de nascimento válida!");
+                    return true;
+                }
+            }
 
 
 
             return false;
+        }
+
+        private void btNovo_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja limpar todos os campos?", "ATENÇÃO", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            id.Text = "";
+            nomeCliente.Text = "";
+            cpf.Checked = false;
+            cnpj.Checked = false;
+            documento.Text = "";
+            masculino.Checked = false;  
+            feminino.Checked = false;   
+            outroGenero.Checked = false;
+            rg.Text = "";
+            estado_civil.Text = "";
+            dtNasc.Text = "";
+            cep.Text = "";
+            endereco.Text = "";
+            num_casa.Text = "";
+            bairro.Text = "";
+            cidade.Text = "";
+            estado.Text = "";
+            numCelular.Text = "";
+            email.Text = "";
+            observacoes.Text = "";
+            situacao.Checked = true;
+
+        }
+
+        private void btFechar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
