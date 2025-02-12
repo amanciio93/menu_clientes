@@ -203,5 +203,112 @@ namespace menu_clientes
         {
             Close();
         }
+
+        private void cpf_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cpf.Checked)
+                documento.Mask = "000,000,000-00";
+                documento.Focus();
+            
+        }
+
+        private void cnpj_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cnpj.Checked)
+                documento.Mask = "00,000,000/0000-00";
+                documento.Focus();
+        }
+
+        private void masculino_CheckedChanged(object sender, EventArgs e)
+        {
+            rg.Focus();
+        }
+
+        private void feminino_CheckedChanged(object sender, EventArgs e)
+        {
+            rg.Focus();
+        }
+       
+        private void outroGenero_CheckedChanged(object sender, EventArgs e)
+        {
+            rg.Focus();
+        }
+        private void dtNasc_Validating(object sender, CancelEventArgs e)
+        {
+            if (dtNasc.Text == "  /  /")
+                return;
+
+            try
+            {
+                dtNasc.Text = Convert.ToDateTime(dtNasc.Text).ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Data inválida");
+                e.Cancel = true;
+            }
+        }
+
+        private void estado_civil_Validating(object sender, CancelEventArgs e)
+        {
+            if (estado_civil.Text == "")
+                return;
+
+            if (estado_civil.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione um estado civil válido");
+                e.Cancel = true;
+            }
+        }
+
+        private void estado_Validating(object sender, CancelEventArgs e)
+        {
+            if (estado.Text == "")
+                return;
+
+            if (estado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione um estado válido");
+                e.Cancel = true;
+            }
+        }
+
+        private void cep_Validating(object sender, CancelEventArgs e)
+        {
+            if (cep.Text.Length == 0)
+                return;
+            if (cep.Text.Length < 8)
+            {
+                MessageBox.Show("Formato de CEP inválido");
+                e.Cancel = true;
+            }
+        }
+
+        private void documento_Validating(object sender, CancelEventArgs e)
+        {
+            if (documento.Text == "") return;
+
+            if (cpf.Checked && documento.Text.Replace(" ", "").Length < 11)
+            {
+                MessageBox.Show("CPF Incompleto ou inválido");
+                e.Cancel = true;
+            }
+
+            if (cnpj.Checked && documento.Text.Replace(" ", "").Length < 14)
+            {
+                MessageBox.Show("CNPJ Incompleto ou inválido.");
+                e.Cancel = true;
+            }
+        }
+
+
+
+        /*
+        private void nomeCliente_TextChanged(object sender, EventArgs e)
+        {
+            nomeCliente.Text = nomeCliente.Text.ToUpper();
+            nomeCliente.SelectionStart = nomeCliente.TextLength;
+        }
+        */
     }
 }

@@ -319,6 +319,7 @@
             this.masculino.TabStop = true;
             this.masculino.Text = "Masculino";
             this.masculino.UseVisualStyleBackColor = false;
+            this.masculino.CheckedChanged += new System.EventHandler(this.masculino_CheckedChanged);
             // 
             // feminino
             // 
@@ -330,6 +331,7 @@
             this.feminino.TabIndex = 12;
             this.feminino.Text = "Feminino";
             this.feminino.UseVisualStyleBackColor = false;
+            this.feminino.CheckedChanged += new System.EventHandler(this.feminino_CheckedChanged);
             // 
             // outroGenero
             // 
@@ -360,11 +362,11 @@
             // 
             this.documento.BeepOnError = true;
             this.documento.Location = new System.Drawing.Point(211, 89);
-            this.documento.Mask = "000,000,000-00";
             this.documento.Name = "documento";
             this.documento.Size = new System.Drawing.Size(188, 25);
             this.documento.TabIndex = 2;
             this.documento.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.documento.Validating += new System.ComponentModel.CancelEventHandler(this.documento_Validating);
             // 
             // dtNasc
             // 
@@ -374,6 +376,7 @@
             this.dtNasc.Name = "dtNasc";
             this.dtNasc.Size = new System.Drawing.Size(137, 25);
             this.dtNasc.TabIndex = 6;
+            this.dtNasc.Validating += new System.ComponentModel.CancelEventHandler(this.dtNasc_Validating);
             // 
             // cep
             // 
@@ -383,6 +386,8 @@
             this.cep.Name = "cep";
             this.cep.Size = new System.Drawing.Size(194, 25);
             this.cep.TabIndex = 9;
+            this.cep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.cep.Validating += new System.ComponentModel.CancelEventHandler(this.cep_Validating);
             // 
             // numCelular
             // 
@@ -404,6 +409,7 @@
             this.cpf.TabStop = true;
             this.cpf.Text = "CPF";
             this.cpf.UseVisualStyleBackColor = false;
+            this.cpf.CheckedChanged += new System.EventHandler(this.cpf_CheckedChanged);
             // 
             // cnpj
             // 
@@ -416,6 +422,7 @@
             this.cnpj.TabStop = true;
             this.cnpj.Text = "CNPJ";
             this.cnpj.UseVisualStyleBackColor = false;
+            this.cnpj.CheckedChanged += new System.EventHandler(this.cnpj_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -481,6 +488,7 @@
             this.estado.Name = "estado";
             this.estado.Size = new System.Drawing.Size(311, 26);
             this.estado.TabIndex = 14;
+            this.estado.Validating += new System.ComponentModel.CancelEventHandler(this.estado_Validating);
             // 
             // estado_civil
             // 
@@ -499,6 +507,7 @@
             this.estado_civil.Name = "estado_civil";
             this.estado_civil.Size = new System.Drawing.Size(179, 26);
             this.estado_civil.TabIndex = 5;
+            this.estado_civil.Validating += new System.ComponentModel.CancelEventHandler(this.estado_civil_Validating);
             // 
             // endereco
             // 
