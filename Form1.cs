@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; // Importa o pacote para trabalhar com o SQL Server;
+using System.Data.SqlClient;
+using System.Security.Cryptography; // Importa o pacote para trabalhar com o SQL Server;
 
 namespace menu_clientes
 {
@@ -47,7 +48,20 @@ namespace menu_clientes
 
                         cmd.Parameters.AddWithValue("@nome", nomeCliente.Text);
                         cmd.Parameters.AddWithValue("@documento", documento.Text);
-                        cmd.Parameters.AddWithValue("@genero", "GENERO"); // Substituir por variável correta
+
+                        if (masculino.Checked == true)
+                        {
+                            cmd.Parameters.AddWithValue("@genero", "Masculino");
+                        }
+                        else if (feminino.Checked == true)
+                        {
+                            cmd.Parameters.AddWithValue("@genero", "Feminino");
+                        }
+                        else if (outroGenero.Checked == true) 
+                        {
+                            cmd.Parameters.AddWithValue("@genero", "Outros");
+                        }
+
                         cmd.Parameters.AddWithValue("@rg", rg.Text);
                         cmd.Parameters.AddWithValue("@estado_civil", estado_civil.Text);
                         cmd.Parameters.AddWithValue("@dt_nascimento", dtNasc.Text);
@@ -60,7 +74,16 @@ namespace menu_clientes
                         cmd.Parameters.AddWithValue("@celular", numCelular.Text);
                         cmd.Parameters.AddWithValue("@email", email.Text);
                         cmd.Parameters.AddWithValue("@observacoes", observacoes.Text);
-                        cmd.Parameters.AddWithValue("@situacao", "SITUAÇÃO");
+
+                        if (situacao.Checked)
+                        {
+                            cmd.Parameters.AddWithValue("@situacao", "Ativo");
+                        }
+                        else 
+                        {
+                            cmd.Parameters.AddWithValue("@situacao", "Inativo");
+                        }
+
 
                         cmd.ExecuteNonQuery();
 
@@ -77,7 +100,53 @@ namespace menu_clientes
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
+
+            if (validacoes() == true)
+                return;
+
             salvarClienteSQL();
+        }
+
+        private bool validacoes()
+        {
+            if (nomeCliente.Text == "")
+            {
+                MessageBox.Show("Campo nome é obrigatório");
+                nomeCliente.Focus();
+                return true;
+            }
+
+            if (!cpf.Checked && !cnpj.Checked)
+            {
+                MessageBox.Show("Selecione o tipo do documento:\rCPF ou CNPJ.");
+                return true;
+            }
+
+            if (documento.Text == "")
+            {
+                if (cpf.Checked == true)
+                {
+                    MessageBox.Show("Informe o CPF!");
+                }
+                else
+                {
+                    MessageBox.Show("Imforme o CNPJ!");
+                }
+
+                documento.Focus();
+                return true;
+            }
+
+            if (!masculino.Checked && !feminino.Checked && !outroGenero.Checked)
+            {
+                MessageBox.Show("Selecione o genero");
+                return true;
+            }
+
+
+
+
+            return false;
         }
     }
 }

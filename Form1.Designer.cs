@@ -364,6 +364,7 @@
             this.documento.Name = "documento";
             this.documento.Size = new System.Drawing.Size(188, 25);
             this.documento.TabIndex = 2;
+            this.documento.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // dtNasc
             // 
