@@ -43,38 +43,37 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.id = new System.Windows.Forms.TextBox();
+            this.nomeCliente = new System.Windows.Forms.TextBox();
+            this.rg = new System.Windows.Forms.TextBox();
+            this.num_casa = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
+            this.observacoes = new System.Windows.Forms.TextBox();
+            this.masculino = new System.Windows.Forms.RadioButton();
+            this.feminino = new System.Windows.Forms.RadioButton();
+            this.outroGenero = new System.Windows.Forms.RadioButton();
+            this.situacao = new System.Windows.Forms.CheckBox();
+            this.documento = new System.Windows.Forms.MaskedTextBox();
+            this.dtNasc = new System.Windows.Forms.MaskedTextBox();
+            this.cep = new System.Windows.Forms.MaskedTextBox();
+            this.numCelular = new System.Windows.Forms.MaskedTextBox();
+            this.cpf = new System.Windows.Forms.RadioButton();
+            this.cnpj = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.estado = new System.Windows.Forms.ComboBox();
+            this.estado_civil = new System.Windows.Forms.ComboBox();
+            this.endereco = new System.Windows.Forms.ComboBox();
+            this.bairro = new System.Windows.Forms.ComboBox();
+            this.cidade = new System.Windows.Forms.ComboBox();
+            this.fotoCliente = new System.Windows.Forms.PictureBox();
+            this.btAddFoto = new System.Windows.Forms.Button();
+            this.btRemoveFoto = new System.Windows.Forms.Button();
+            this.btSalvar = new System.Windows.Forms.Button();
+            this.btFechar = new System.Windows.Forms.Button();
+            this.btNovo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -259,170 +258,170 @@
             this.label16.TabIndex = 9;
             this.label16.Text = "Situação cadastral";
             // 
-            // textBox1
+            // id
             // 
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(211, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
-            this.textBox1.TabIndex = 99;
-            this.textBox1.TabStop = false;
+            this.id.ForeColor = System.Drawing.Color.Black;
+            this.id.Location = new System.Drawing.Point(211, 32);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(100, 25);
+            this.id.TabIndex = 99;
+            this.id.TabStop = false;
             // 
-            // textBox2
+            // nomeCliente
             // 
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(317, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(405, 25);
-            this.textBox2.TabIndex = 0;
+            this.nomeCliente.ForeColor = System.Drawing.Color.Black;
+            this.nomeCliente.Location = new System.Drawing.Point(317, 32);
+            this.nomeCliente.Name = "nomeCliente";
+            this.nomeCliente.Size = new System.Drawing.Size(405, 25);
+            this.nomeCliente.TabIndex = 0;
             // 
-            // textBox5
+            // rg
             // 
-            this.textBox5.ForeColor = System.Drawing.Color.Black;
-            this.textBox5.Location = new System.Drawing.Point(214, 153);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(161, 25);
-            this.textBox5.TabIndex = 4;
+            this.rg.ForeColor = System.Drawing.Color.Black;
+            this.rg.Location = new System.Drawing.Point(214, 153);
+            this.rg.Name = "rg";
+            this.rg.Size = new System.Drawing.Size(161, 25);
+            this.rg.TabIndex = 4;
             // 
-            // textBox10
+            // num_casa
             // 
-            this.textBox10.ForeColor = System.Drawing.Color.Black;
-            this.textBox10.Location = new System.Drawing.Point(648, 258);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(74, 25);
-            this.textBox10.TabIndex = 11;
+            this.num_casa.ForeColor = System.Drawing.Color.Black;
+            this.num_casa.Location = new System.Drawing.Point(648, 258);
+            this.num_casa.Name = "num_casa";
+            this.num_casa.Size = new System.Drawing.Size(74, 25);
+            this.num_casa.TabIndex = 11;
             // 
-            // textBox14
+            // email
             // 
-            this.textBox14.ForeColor = System.Drawing.Color.Black;
-            this.textBox14.Location = new System.Drawing.Point(481, 389);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(241, 25);
-            this.textBox14.TabIndex = 16;
+            this.email.ForeColor = System.Drawing.Color.Black;
+            this.email.Location = new System.Drawing.Point(481, 389);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(241, 25);
+            this.email.TabIndex = 16;
             // 
-            // textBox15
+            // observacoes
             // 
-            this.textBox15.ForeColor = System.Drawing.Color.Black;
-            this.textBox15.Location = new System.Drawing.Point(10, 464);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(712, 126);
-            this.textBox15.TabIndex = 17;
+            this.observacoes.ForeColor = System.Drawing.Color.Black;
+            this.observacoes.Location = new System.Drawing.Point(10, 464);
+            this.observacoes.Multiline = true;
+            this.observacoes.Name = "observacoes";
+            this.observacoes.Size = new System.Drawing.Size(712, 126);
+            this.observacoes.TabIndex = 17;
             // 
-            // radioButton1
+            // masculino
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Location = new System.Drawing.Point(0, 24);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(98, 22);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Masculino";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.masculino.AutoSize = true;
+            this.masculino.BackColor = System.Drawing.Color.Transparent;
+            this.masculino.Location = new System.Drawing.Point(0, 24);
+            this.masculino.Name = "masculino";
+            this.masculino.Size = new System.Drawing.Size(98, 22);
+            this.masculino.TabIndex = 0;
+            this.masculino.TabStop = true;
+            this.masculino.Text = "Masculino";
+            this.masculino.UseVisualStyleBackColor = false;
             // 
-            // radioButton2
+            // feminino
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Location = new System.Drawing.Point(104, 24);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(90, 22);
-            this.radioButton2.TabIndex = 12;
-            this.radioButton2.Text = "Feminino";
-            this.radioButton2.UseVisualStyleBackColor = false;
+            this.feminino.AutoSize = true;
+            this.feminino.BackColor = System.Drawing.Color.Transparent;
+            this.feminino.Location = new System.Drawing.Point(104, 24);
+            this.feminino.Name = "feminino";
+            this.feminino.Size = new System.Drawing.Size(90, 22);
+            this.feminino.TabIndex = 12;
+            this.feminino.Text = "Feminino";
+            this.feminino.UseVisualStyleBackColor = false;
             // 
-            // radioButton3
+            // outroGenero
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton3.Location = new System.Drawing.Point(200, 24);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(66, 22);
-            this.radioButton3.TabIndex = 13;
-            this.radioButton3.Text = "Outro";
-            this.radioButton3.UseVisualStyleBackColor = false;
+            this.outroGenero.AutoSize = true;
+            this.outroGenero.BackColor = System.Drawing.Color.Transparent;
+            this.outroGenero.Location = new System.Drawing.Point(200, 24);
+            this.outroGenero.Name = "outroGenero";
+            this.outroGenero.Size = new System.Drawing.Size(66, 22);
+            this.outroGenero.TabIndex = 13;
+            this.outroGenero.Text = "Outro";
+            this.outroGenero.UseVisualStyleBackColor = false;
             // 
-            // checkBox1
+            // situacao
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(145, 627);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(67, 22);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.TabStop = false;
-            this.checkBox1.Text = "Ativo";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.situacao.AutoSize = true;
+            this.situacao.BackColor = System.Drawing.Color.Transparent;
+            this.situacao.Checked = true;
+            this.situacao.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.situacao.Location = new System.Drawing.Point(145, 627);
+            this.situacao.Name = "situacao";
+            this.situacao.Size = new System.Drawing.Size(67, 22);
+            this.situacao.TabIndex = 18;
+            this.situacao.TabStop = false;
+            this.situacao.Text = "Ativo";
+            this.situacao.UseVisualStyleBackColor = false;
             // 
-            // maskedTextBox1
+            // documento
             // 
-            this.maskedTextBox1.BeepOnError = true;
-            this.maskedTextBox1.Location = new System.Drawing.Point(211, 89);
-            this.maskedTextBox1.Mask = "000,000,000-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(188, 25);
-            this.maskedTextBox1.TabIndex = 2;
+            this.documento.BeepOnError = true;
+            this.documento.Location = new System.Drawing.Point(211, 89);
+            this.documento.Mask = "000,000,000-00";
+            this.documento.Name = "documento";
+            this.documento.Size = new System.Drawing.Size(188, 25);
+            this.documento.TabIndex = 2;
             // 
-            // maskedTextBox2
+            // dtNasc
             // 
-            this.maskedTextBox2.BeepOnError = true;
-            this.maskedTextBox2.Location = new System.Drawing.Point(566, 153);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(137, 25);
-            this.maskedTextBox2.TabIndex = 6;
+            this.dtNasc.BeepOnError = true;
+            this.dtNasc.Location = new System.Drawing.Point(566, 153);
+            this.dtNasc.Mask = "00/00/0000";
+            this.dtNasc.Name = "dtNasc";
+            this.dtNasc.Size = new System.Drawing.Size(137, 25);
+            this.dtNasc.TabIndex = 6;
             // 
-            // maskedTextBox3
+            // cep
             // 
-            this.maskedTextBox3.BeepOnError = true;
-            this.maskedTextBox3.Location = new System.Drawing.Point(14, 258);
-            this.maskedTextBox3.Mask = "00000-000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(194, 25);
-            this.maskedTextBox3.TabIndex = 9;
+            this.cep.BeepOnError = true;
+            this.cep.Location = new System.Drawing.Point(14, 258);
+            this.cep.Mask = "00000-000";
+            this.cep.Name = "cep";
+            this.cep.Size = new System.Drawing.Size(194, 25);
+            this.cep.TabIndex = 9;
             // 
-            // maskedTextBox4
+            // numCelular
             // 
-            this.maskedTextBox4.BeepOnError = true;
-            this.maskedTextBox4.Location = new System.Drawing.Point(331, 388);
-            this.maskedTextBox4.Mask = "(00)00000-0000";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(144, 25);
-            this.maskedTextBox4.TabIndex = 15;
+            this.numCelular.BeepOnError = true;
+            this.numCelular.Location = new System.Drawing.Point(331, 388);
+            this.numCelular.Mask = "(00)00000-0000";
+            this.numCelular.Name = "numCelular";
+            this.numCelular.Size = new System.Drawing.Size(144, 25);
+            this.numCelular.TabIndex = 15;
             // 
-            // radioButton4
+            // cpf
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton4.Location = new System.Drawing.Point(211, 67);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(50, 22);
-            this.radioButton4.TabIndex = 1;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "CPF";
-            this.radioButton4.UseVisualStyleBackColor = false;
+            this.cpf.AutoSize = true;
+            this.cpf.BackColor = System.Drawing.Color.Transparent;
+            this.cpf.Location = new System.Drawing.Point(211, 67);
+            this.cpf.Name = "cpf";
+            this.cpf.Size = new System.Drawing.Size(50, 22);
+            this.cpf.TabIndex = 1;
+            this.cpf.TabStop = true;
+            this.cpf.Text = "CPF";
+            this.cpf.UseVisualStyleBackColor = false;
             // 
-            // radioButton5
+            // cnpj
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton5.Location = new System.Drawing.Point(267, 68);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(58, 22);
-            this.radioButton5.TabIndex = 19;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "CNPJ";
-            this.radioButton5.UseVisualStyleBackColor = false;
+            this.cnpj.AutoSize = true;
+            this.cnpj.BackColor = System.Drawing.Color.Transparent;
+            this.cnpj.Location = new System.Drawing.Point(267, 68);
+            this.cnpj.Name = "cnpj";
+            this.cnpj.Size = new System.Drawing.Size(58, 22);
+            this.cnpj.TabIndex = 19;
+            this.cnpj.TabStop = true;
+            this.cnpj.Text = "CNPJ";
+            this.cnpj.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.masculino);
+            this.groupBox1.Controls.Add(this.feminino);
+            this.groupBox1.Controls.Add(this.outroGenero);
             this.groupBox1.Location = new System.Drawing.Point(405, 67);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(317, 56);
@@ -443,14 +442,14 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "Estado";
             // 
-            // comboBox1
+            // estado
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DropDownHeight = 200;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.IntegralHeight = false;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.estado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.estado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.estado.DropDownHeight = 200;
+            this.estado.FormattingEnabled = true;
+            this.estado.IntegralHeight = false;
+            this.estado.Items.AddRange(new object[] {
             "Acre",
             "Alagoas",
             "Amapá",
@@ -477,175 +476,166 @@
             "São Paulo",
             "Sergipe",
             "Tocantins"});
-            this.comboBox1.Location = new System.Drawing.Point(14, 388);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(311, 26);
-            this.comboBox1.TabIndex = 14;
+            this.estado.Location = new System.Drawing.Point(14, 388);
+            this.estado.Name = "estado";
+            this.estado.Size = new System.Drawing.Size(311, 26);
+            this.estado.TabIndex = 14;
             // 
-            // comboBox2
+            // estado_civil
             // 
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.DropDownHeight = 200;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.IntegralHeight = false;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.estado_civil.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.estado_civil.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.estado_civil.DropDownHeight = 200;
+            this.estado_civil.FormattingEnabled = true;
+            this.estado_civil.IntegralHeight = false;
+            this.estado_civil.Items.AddRange(new object[] {
             "Viuvo (a)",
             "Casado (a)",
             "Divorciado (a)",
             "Separado (a)",
             "Solteiro (a)"});
-            this.comboBox2.Location = new System.Drawing.Point(381, 153);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(179, 26);
-            this.comboBox2.TabIndex = 5;
+            this.estado_civil.Location = new System.Drawing.Point(381, 153);
+            this.estado_civil.Name = "estado_civil";
+            this.estado_civil.Size = new System.Drawing.Size(179, 26);
+            this.estado_civil.TabIndex = 5;
             // 
-            // comboBox3
+            // endereco
             // 
-            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox3.DropDownHeight = 200;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.IntegralHeight = false;
-            this.comboBox3.Location = new System.Drawing.Point(214, 257);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(428, 26);
-            this.comboBox3.TabIndex = 10;
+            this.endereco.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.endereco.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.endereco.DropDownHeight = 200;
+            this.endereco.FormattingEnabled = true;
+            this.endereco.IntegralHeight = false;
+            this.endereco.Location = new System.Drawing.Point(214, 257);
+            this.endereco.Name = "endereco";
+            this.endereco.Size = new System.Drawing.Size(428, 26);
+            this.endereco.TabIndex = 10;
             // 
-            // comboBox4
+            // bairro
             // 
-            this.comboBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox4.DropDownHeight = 200;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.IntegralHeight = false;
-            this.comboBox4.Location = new System.Drawing.Point(12, 323);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(313, 26);
-            this.comboBox4.TabIndex = 12;
+            this.bairro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.bairro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.bairro.DropDownHeight = 200;
+            this.bairro.FormattingEnabled = true;
+            this.bairro.IntegralHeight = false;
+            this.bairro.Location = new System.Drawing.Point(12, 323);
+            this.bairro.Name = "bairro";
+            this.bairro.Size = new System.Drawing.Size(313, 26);
+            this.bairro.TabIndex = 12;
             // 
-            // comboBox5
+            // cidade
             // 
-            this.comboBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox5.DropDownHeight = 200;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.IntegralHeight = false;
-            this.comboBox5.Location = new System.Drawing.Point(345, 323);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(377, 26);
-            this.comboBox5.TabIndex = 13;
+            this.cidade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cidade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cidade.DropDownHeight = 200;
+            this.cidade.FormattingEnabled = true;
+            this.cidade.IntegralHeight = false;
+            this.cidade.Location = new System.Drawing.Point(345, 323);
+            this.cidade.Name = "cidade";
+            this.cidade.Size = new System.Drawing.Size(377, 26);
+            this.cidade.TabIndex = 13;
             // 
-            // pictureBox1
+            // fotoCliente
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::menu_clientes.Properties.Resources.avatar;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(161, 167);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
+            this.fotoCliente.BackColor = System.Drawing.Color.Transparent;
+            this.fotoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.fotoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fotoCliente.Image = global::menu_clientes.Properties.Resources.avatar;
+            this.fotoCliente.Location = new System.Drawing.Point(14, 12);
+            this.fotoCliente.Name = "fotoCliente";
+            this.fotoCliente.Size = new System.Drawing.Size(161, 167);
+            this.fotoCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.fotoCliente.TabIndex = 28;
+            this.fotoCliente.TabStop = false;
             // 
-            // button1
+            // btAddFoto
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(14, 185);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 31);
-            this.button1.TabIndex = 7;
-            this.button1.TabStop = false;
-            this.button1.Text = "Imagem";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btAddFoto.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btAddFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btAddFoto.FlatAppearance.BorderSize = 0;
+            this.btAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAddFoto.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAddFoto.ForeColor = System.Drawing.Color.Black;
+            this.btAddFoto.Image = ((System.Drawing.Image)(resources.GetObject("btAddFoto.Image")));
+            this.btAddFoto.Location = new System.Drawing.Point(14, 185);
+            this.btAddFoto.Name = "btAddFoto";
+            this.btAddFoto.Size = new System.Drawing.Size(92, 31);
+            this.btAddFoto.TabIndex = 7;
+            this.btAddFoto.TabStop = false;
+            this.btAddFoto.Text = "Imagem";
+            this.btAddFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btAddFoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btAddFoto.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btRemoveFoto
             // 
-            this.button2.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(112, 185);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(63, 31);
-            this.button2.TabIndex = 8;
-            this.button2.TabStop = false;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btRemoveFoto.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btRemoveFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btRemoveFoto.FlatAppearance.BorderSize = 0;
+            this.btRemoveFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRemoveFoto.ForeColor = System.Drawing.Color.Black;
+            this.btRemoveFoto.Image = ((System.Drawing.Image)(resources.GetObject("btRemoveFoto.Image")));
+            this.btRemoveFoto.Location = new System.Drawing.Point(112, 185);
+            this.btRemoveFoto.Name = "btRemoveFoto";
+            this.btRemoveFoto.Size = new System.Drawing.Size(63, 31);
+            this.btRemoveFoto.TabIndex = 8;
+            this.btRemoveFoto.TabStop = false;
+            this.btRemoveFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btRemoveFoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btRemoveFoto.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btSalvar
             // 
-            this.button3.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(530, 618);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(192, 31);
-            this.button3.TabIndex = 21;
-            this.button3.Text = " Salvar / Atualizar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btSalvar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.ForeColor = System.Drawing.Color.Black;
+            this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
+            this.btSalvar.Location = new System.Drawing.Point(530, 618);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(192, 31);
+            this.btSalvar.TabIndex = 21;
+            this.btSalvar.Text = " Salvar / Atualizar";
+            this.btSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btSalvar.UseVisualStyleBackColor = false;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
-            // button4
+            // btFechar
             // 
-            this.button4.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(332, 618);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(93, 31);
-            this.button4.TabIndex = 19;
-            this.button4.TabStop = false;
-            this.button4.Text = " Fechar";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btFechar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btFechar.FlatAppearance.BorderSize = 0;
+            this.btFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btFechar.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFechar.ForeColor = System.Drawing.Color.Black;
+            this.btFechar.Location = new System.Drawing.Point(332, 618);
+            this.btFechar.Name = "btFechar";
+            this.btFechar.Size = new System.Drawing.Size(93, 31);
+            this.btFechar.TabIndex = 19;
+            this.btFechar.TabStop = false;
+            this.btFechar.Text = " Fechar";
+            this.btFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btFechar.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btNovo
             // 
-            this.button5.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(431, 618);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(93, 31);
-            this.button5.TabIndex = 20;
-            this.button5.TabStop = false;
-            this.button5.Text = " Novo";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(236, 622);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 100;
-            this.button6.Text = "Conect";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btNovo.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btNovo.FlatAppearance.BorderSize = 0;
+            this.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btNovo.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNovo.ForeColor = System.Drawing.Color.Black;
+            this.btNovo.Location = new System.Drawing.Point(431, 618);
+            this.btNovo.Name = "btNovo";
+            this.btNovo.Size = new System.Drawing.Size(93, 31);
+            this.btNovo.TabIndex = 20;
+            this.btNovo.TabStop = false;
+            this.btNovo.Text = " Novo";
+            this.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btNovo.UseVisualStyleBackColor = false;
             // 
             // FormCadastroCliente
             // 
@@ -655,33 +645,32 @@
             this.BackgroundImage = global::menu_clientes.Properties.Resources.backGradiente1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(734, 661);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btNovo);
+            this.Controls.Add(this.btFechar);
+            this.Controls.Add(this.btSalvar);
+            this.Controls.Add(this.btRemoveFoto);
+            this.Controls.Add(this.btAddFoto);
+            this.Controls.Add(this.fotoCliente);
+            this.Controls.Add(this.cidade);
+            this.Controls.Add(this.bairro);
+            this.Controls.Add(this.endereco);
+            this.Controls.Add(this.estado_civil);
+            this.Controls.Add(this.estado);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.maskedTextBox4);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cnpj);
+            this.Controls.Add(this.cpf);
+            this.Controls.Add(this.numCelular);
+            this.Controls.Add(this.cep);
+            this.Controls.Add(this.dtNasc);
+            this.Controls.Add(this.documento);
+            this.Controls.Add(this.situacao);
+            this.Controls.Add(this.num_casa);
+            this.Controls.Add(this.email);
+            this.Controls.Add(this.observacoes);
+            this.Controls.Add(this.rg);
+            this.Controls.Add(this.nomeCliente);
+            this.Controls.Add(this.id);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -710,7 +699,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroCliente_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -732,36 +721,35 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.TextBox id;
+        private System.Windows.Forms.TextBox nomeCliente;
+        private System.Windows.Forms.TextBox rg;
+        private System.Windows.Forms.TextBox num_casa;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox observacoes;
+        private System.Windows.Forms.RadioButton masculino;
+        private System.Windows.Forms.RadioButton feminino;
+        private System.Windows.Forms.RadioButton outroGenero;
+        private System.Windows.Forms.CheckBox situacao;
+        private System.Windows.Forms.MaskedTextBox documento;
+        private System.Windows.Forms.MaskedTextBox dtNasc;
+        private System.Windows.Forms.MaskedTextBox cep;
+        private System.Windows.Forms.MaskedTextBox numCelular;
+        private System.Windows.Forms.RadioButton cpf;
+        private System.Windows.Forms.RadioButton cnpj;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ComboBox estado;
+        private System.Windows.Forms.ComboBox estado_civil;
+        private System.Windows.Forms.ComboBox endereco;
+        private System.Windows.Forms.ComboBox bairro;
+        private System.Windows.Forms.ComboBox cidade;
+        private System.Windows.Forms.PictureBox fotoCliente;
+        private System.Windows.Forms.Button btAddFoto;
+        private System.Windows.Forms.Button btRemoveFoto;
+        private System.Windows.Forms.Button btSalvar;
+        private System.Windows.Forms.Button btFechar;
+        private System.Windows.Forms.Button btNovo;
     }
 }
 
