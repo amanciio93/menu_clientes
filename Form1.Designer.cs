@@ -580,6 +580,7 @@
             this.btAddFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btAddFoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btAddFoto.UseVisualStyleBackColor = false;
+            this.btAddFoto.Click += new System.EventHandler(this.btAddFoto_Click);
             // 
             // btRemoveFoto
             // 
@@ -597,6 +598,7 @@
             this.btRemoveFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btRemoveFoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btRemoveFoto.UseVisualStyleBackColor = false;
+            this.btRemoveFoto.Click += new System.EventHandler(this.btRemoveFoto_Click);
             // 
             // btSalvar
             // 
@@ -712,6 +714,7 @@
             this.Name = "FormCadastroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu de clientes";
+            this.Load += new System.EventHandler(this.FormCadastroCliente_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroCliente_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

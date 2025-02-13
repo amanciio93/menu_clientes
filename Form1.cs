@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography; // Importa o pacote para trabalhar com o SQL Server;
+using System.Drawing;
+using System.IO;
 
 namespace menu_clientes
 {
@@ -319,6 +321,55 @@ namespace menu_clientes
         private void cidade_TextChanged(object sender, EventArgs e)
         {
             Funcoes.priMaiuscula(cidade);
+        }
+
+        private void btAddFoto_Click(object sender, EventArgs e)
+        {
+            if (id.Text == "")
+            {
+                Funcoes.msgAlerta("É necessário salvar o cadastro antes.");
+                return;
+            }
+
+            OpenFileDialog box = new OpenFileDialog();
+
+            box.Filter = "Arquivos de imagem | *.jpg; *.jpeg; *.png; *.gif; *.bmp";
+
+            if (box.ShowDialog() == DialogResult.OK)
+            {
+                fotoCliente.Image = Image.FromFile(box.FileName);
+
+                File.Copy(box.FileName, AppDomain.CurrentDomain.BaseDirectory + "/fotos_clientes/" + id.Text + ".jpg");
+            }
+        }
+
+        private void btRemoveFoto_Click(object sender, EventArgs e)
+        {
+            if (id.Text == "")
+            {
+                Funcoes.msgErro("Não há foto para ser removida");
+                return;
+            }
+
+            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "/fotos_clientes/" + id.Text + ".jpg") == false)
+            {
+                Funcoes.msgErro("Não há foto para ser removida");
+                return;
+            }
+
+            if (Funcoes.msgConfirmar("Deseja remover a foto ?") == false) return;
+
+            fotoCliente.Image = Properties.Resources.avatar;
+
+            File.Delete(AppDomain.CurrentDomain.BaseDirectory + "/fotos_clientes/" + id.Text + ".jpg");
+        }
+
+        private void FormCadastroCliente_Load(object sender, EventArgs e)
+        {
+            using(SqlConnection conexao = new SqlConnection("Server=localhost;Database=projetoMenuClientes;Integrated Security=True;"))
+            { 
+                
+            }
         }
     }
 }
