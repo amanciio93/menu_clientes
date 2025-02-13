@@ -263,10 +263,11 @@
             this.id.ForeColor = System.Drawing.Color.Black;
             this.id.Location = new System.Drawing.Point(211, 32);
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Size = new System.Drawing.Size(100, 25);
             this.id.TabIndex = 99;
             this.id.TabStop = false;
-            this.id.Text = "9";
+            this.id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nomeCliente
             // 
@@ -614,7 +615,7 @@
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(192, 31);
             this.btSalvar.TabIndex = 21;
-            this.btSalvar.Text = " Salvar / Atualizar";
+            this.btSalvar.Text = " Salvar";
             this.btSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btSalvar.UseVisualStyleBackColor = false;
@@ -714,7 +715,7 @@
             this.MinimizeBox = false;
             this.Name = "FormCadastroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu de clientes";
+            this.Text = "Cadastro / Atualização de clientes";
             this.Load += new System.EventHandler(this.FormCadastroCliente_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroCliente_KeyDown);
             this.groupBox1.ResumeLayout(false);

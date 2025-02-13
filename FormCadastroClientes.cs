@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography; // Importa o pacote para trabalhar com o SQL Server;
-using System.Drawing;
 using System.IO;
 
 
@@ -20,6 +19,8 @@ namespace menu_clientes
     {
         // String de conexão com o SQL Server;
         private string connectionString = "Server=localhost;Database=projetoMenuClientes;Integrated Security=True;";
+        private string fotos_clientes = AppDomain.CurrentDomain.BaseDirectory + "/fotos_clientes/";
+
         public FormCadastroCliente()
         {
             InitializeComponent();
@@ -46,8 +47,16 @@ namespace menu_clientes
 
                     using (SqlCommand cmd = conn.CreateCommand())
                     {
-                        cmd.CommandText = "INSERT INTO clientes (nome, documento, genero, rg, estado_civil, dt_nascimento, cep, endereco, numero, bairro, cidade, estado, celular, email, observacoes, situacao) " +
-              "VALUES(@nome, @documento, @genero, @rg, @estado_civil, @dt_nascimento, @cep, @endereco, @numero, @bairro, @cidade, @estado, @celular, @email, @observacoes, @situacao);";
+
+                        if (id.Text == "")
+                        {
+                            cmd.CommandText = "INSERT INTO clientes (nome, documento, genero, rg, estado_civil, dt_nascimento, cep, endereco, numero, bairro, cidade, estado, celular, email, observacoes, situacao) " +
+                                              "VALUES(@nome, @documento, @genero, @rg, @estado_civil, @dt_nascimento, @cep, @endereco, @numero, @bairro, @cidade, @estado, @celular, @email, @observacoes, @situacao);";
+                        }
+                        else
+                        {
+                            cmd.CommandText = "UPDATE clientes SET nome = @nome, documento = @documento, genero = @genero, rg = @rg, estado_civil = @estado_civil, dt_nascimento = @dt_nascimento, cep = @cep, endereco = @endereco, numero = @numero, bairro = @bairro, cidade = @cidade, estado = @estado, celular = @celular, email = @email, observacoes = @observacoes, situacao = @situacao WHERE id = " + id.Text;
+                        }
 
                         cmd.Parameters.AddWithValue("@nome", nomeCliente.Text);
                         cmd.Parameters.AddWithValue("@documento", documento.Text);
@@ -96,8 +105,11 @@ namespace menu_clientes
 
                         cmd.ExecuteNonQuery();
 
-                        cmd.CommandText = "SELECT @@IDENTITY";
-                        id.Text = cmd.ExecuteScalar().ToString();
+                        if (id.Text == "")
+                        {
+                            cmd.CommandText = "SELECT @@IDENTITY";
+                            id.Text = cmd.ExecuteScalar().ToString();
+                        }                      
 
                     }
 
@@ -199,6 +211,9 @@ namespace menu_clientes
             email.Text = "";
             observacoes.Text = "";
             situacao.Checked = true;
+
+            btSalvar.Text = " Salvar";
+            fotoCliente.Image = Properties.Resources.avatar;
 
         }
 
@@ -340,7 +355,7 @@ namespace menu_clientes
             {
                 fotoCliente.Image = Image.FromFile(box.FileName);
 
-                File.Copy(box.FileName, AppDomain.CurrentDomain.BaseDirectory + "/fotos_clientes/" + id.Text + ".jpg");
+                File.Copy(box.FileName, fotos_clientes + id.Text + ".jpg");
             }
         }
 
@@ -352,7 +367,7 @@ namespace menu_clientes
                 return;
             }
 
-            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "/fotos_clientes/" + id.Text + ".jpg") == false)
+            if (File.Exists(fotos_clientes + id.Text + ".jpg") == false)
             {
                 Funcoes.msgErro("Não há foto para ser removida");
                 return;
@@ -362,18 +377,24 @@ namespace menu_clientes
 
             fotoCliente.Image = Properties.Resources.avatar;
 
-            File.Delete(AppDomain.CurrentDomain.BaseDirectory + "/fotos_clientes/" + id.Text + ".jpg");
+            File.Delete(fotos_clientes + id.Text + ".jpg");
         }
 
         private void FormCadastroCliente_Load(object sender, EventArgs e)
         {
-            using (SqlConnection conexao = new SqlConnection("Server=localhost;Database=projetoMenuClientes;Integrated Security=True;"))
+
+            if (id.Text == "")
+                return;
+
+            using (SqlConnection conexao = new SqlConnection(connectionString))
             {
                 conexao.Open();
 
                 using (SqlCommand cmd = conexao.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT * FROM clientes WHERE id = " + id.Text;
+                    //cmd.CommandText = "SELECT * FROM clientes WHERE id = " + id.Text;
+                    cmd.CommandText = "SELECT * FROM clientes WHERE id = @id";
+                    cmd.Parameters.AddWithValue("@id", id.Text);
 
                     DataTable dt = new DataTable();
 
@@ -414,8 +435,10 @@ namespace menu_clientes
                         else
                             situacao.Checked = false;
 
-                        if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "/fotos_clientes/" + id.Text + ".jpg"))
-                            fotoCliente.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/fotos_clientes/" + id.Text + ".jpg");
+                        if (File.Exists(fotos_clientes + id.Text + ".jpg"))
+                        {
+                            fotoCliente.Image = Image.FromFile(fotos_clientes + id.Text + ".jpg");
+                        }
                         else
                             fotoCliente.Image = Properties.Resources.avatar;
                     }
