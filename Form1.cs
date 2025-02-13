@@ -12,6 +12,7 @@ using System.Security.Cryptography; // Importa o pacote para trabalhar com o SQL
 using System.Drawing;
 using System.IO;
 
+
 namespace menu_clientes
 {
     public partial class FormCadastroCliente : Form
@@ -366,9 +367,59 @@ namespace menu_clientes
 
         private void FormCadastroCliente_Load(object sender, EventArgs e)
         {
-            using(SqlConnection conexao = new SqlConnection("Server=localhost;Database=projetoMenuClientes;Integrated Security=True;"))
-            { 
-                
+            using (SqlConnection conexao = new SqlConnection("Server=localhost;Database=projetoMenuClientes;Integrated Security=True;"))
+            {
+                conexao.Open();
+
+                using (SqlCommand cmd = conexao.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT * FROM clientes WHERE id = " + id.Text;
+
+                    DataTable dt = new DataTable();
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+
+                        nomeCliente.Text = dt.Rows[0]["nome"].ToString();
+                        rg.Text = dt.Rows[0]["rg"].ToString();
+                        estado_civil.Text = dt.Rows[0]["estado_civil"].ToString();
+                        dtNasc.Text = dt.Rows[0]["dt_nascimento"].ToString();
+                        cep.Text = dt.Rows[0]["cep"].ToString();
+                        endereco.Text = dt.Rows[0]["endereco"].ToString();
+                        num_casa.Text = dt.Rows[0]["numero"].ToString();
+                        bairro.Text = dt.Rows[0]["bairro"].ToString();
+                        cidade.Text = dt.Rows[0]["cidade"].ToString();
+                        estado.Text = dt.Rows[0]["estado"].ToString();
+                        numCelular.Text = dt.Rows[0]["celular"].ToString();
+                        email.Text = dt.Rows[0]["email"].ToString();
+                        observacoes.Text = dt.Rows[0]["observacoes"].ToString();
+
+                        if (dt.Rows[0]["documento"].ToString().Length == 11)
+                            cpf.Checked = true;
+                        else
+                            cnpj.Checked = true;
+
+                        documento.Text = dt.Rows[0]["documento"].ToString();
+
+                        if (dt.Rows[0]["genero"].ToString() == "Masculino")
+                            masculino.Checked = true;
+                        else if (dt.Rows[0]["genero"].ToString() == "Feminino")
+                            feminino.Checked = true;
+                        else
+                            outroGenero.Checked = true;
+
+                        if (dt.Rows[0]["situacao"].ToString() == "Ativo")
+                            situacao.Checked = true;
+                        else
+                            situacao.Checked = false;
+
+                        if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "/fotos_clientes/" + id.Text + ".jpg"))
+                            fotoCliente.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/fotos_clientes/" + id.Text + ".jpg");
+                        else
+                            fotoCliente.Image = Properties.Resources.avatar;
+                    }
+                }
             }
         }
     }

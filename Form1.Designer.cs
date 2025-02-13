@@ -266,6 +266,7 @@
             this.id.Size = new System.Drawing.Size(100, 25);
             this.id.TabIndex = 99;
             this.id.TabStop = false;
+            this.id.Text = "9";
             // 
             // nomeCliente
             // 
