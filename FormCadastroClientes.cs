@@ -29,7 +29,8 @@ namespace menu_clientes
         private void FormCadastroCliente_KeyDown(object sender, KeyEventArgs e)
         {
             //Pega o evento quando o ENTER é pressionado e o interpreta como TAB;
-            if (e.KeyCode == Keys.Return) {
+            if (e.KeyCode == Keys.Return)
+            {
                 SendKeys.Send("{TAB}");
                 e.SuppressKeyPress = true;
             }
@@ -69,14 +70,14 @@ namespace menu_clientes
                         {
                             cmd.Parameters.AddWithValue("@genero", "Feminino");
                         }
-                        else if (outroGenero.Checked == true) 
+                        else if (outroGenero.Checked == true)
                         {
                             cmd.Parameters.AddWithValue("@genero", "Outros");
                         }
 
                         cmd.Parameters.AddWithValue("@rg", rg.Text);
                         cmd.Parameters.AddWithValue("@estado_civil", estado_civil.Text);
-                        
+
                         if (dtNasc.Text == "  /  /")
                             cmd.Parameters.AddWithValue("@dt_nascimento", DBNull.Value); // Salvando nulo
                         else
@@ -97,7 +98,7 @@ namespace menu_clientes
                         {
                             cmd.Parameters.AddWithValue("@situacao", "Ativo");
                         }
-                        else 
+                        else
                         {
                             cmd.Parameters.AddWithValue("@situacao", "Inativo");
                         }
@@ -109,7 +110,7 @@ namespace menu_clientes
                         {
                             cmd.CommandText = "SELECT @@IDENTITY";
                             id.Text = cmd.ExecuteScalar().ToString();
-                        }                      
+                        }
 
                     }
 
@@ -187,7 +188,7 @@ namespace menu_clientes
 
         private void btNovo_Click(object sender, EventArgs e)
         {
-            if (Funcoes.msgConfirmar("Deseja limpar todos os campos?") == false )
+            if (Funcoes.msgConfirmar("Deseja limpar todos os campos?") == false)
                 return;
 
             id.Text = "";
@@ -195,8 +196,8 @@ namespace menu_clientes
             cpf.Checked = false;
             cnpj.Checked = false;
             documento.Text = "";
-            masculino.Checked = false;  
-            feminino.Checked = false;   
+            masculino.Checked = false;
+            feminino.Checked = false;
             outroGenero.Checked = false;
             rg.Text = "";
             estado_civil.Text = "";
@@ -226,15 +227,15 @@ namespace menu_clientes
         {
             if (cpf.Checked)
                 documento.Mask = "000,000,000-00";
-                documento.Focus();
-            
+            documento.Focus();
+
         }
 
         private void cnpj_CheckedChanged(object sender, EventArgs e)
         {
             if (cnpj.Checked)
                 documento.Mask = "00,000,000/0000-00";
-                documento.Focus();
+            documento.Focus();
         }
 
         private void masculino_CheckedChanged(object sender, EventArgs e)
@@ -246,7 +247,7 @@ namespace menu_clientes
         {
             rg.Focus();
         }
-       
+
         private void outroGenero_CheckedChanged(object sender, EventArgs e)
         {
             rg.Focus();
@@ -383,67 +384,59 @@ namespace menu_clientes
         private void FormCadastroCliente_Load(object sender, EventArgs e)
         {
 
+            Funcoes.carregarDados(endereco, "clientes", "endereco");
+            Funcoes.carregarDados(bairro, "clientes", "bairro");
+            Funcoes.carregarDados(cidade, "clientes", "cidade");
+
             if (id.Text == "")
                 return;
 
-            using (SqlConnection conexao = new SqlConnection(connectionString))
+            btSalvar.Text = "Atualizar";
+
+            DataTable dt = new DataTable();
+
+            Funcoes.buscaSQL("SELECT * FROM clientes WHERE id = " + id.Text);
+
+
+            nomeCliente.Text = dt.Rows[0]["nome"].ToString();
+            rg.Text = dt.Rows[0]["rg"].ToString();
+            estado_civil.Text = dt.Rows[0]["estado_civil"].ToString();
+            dtNasc.Text = dt.Rows[0]["dt_nascimento"].ToString();
+            cep.Text = dt.Rows[0]["cep"].ToString();
+            endereco.Text = dt.Rows[0]["endereco"].ToString();
+            num_casa.Text = dt.Rows[0]["numero"].ToString();
+            bairro.Text = dt.Rows[0]["bairro"].ToString();
+            cidade.Text = dt.Rows[0]["cidade"].ToString();
+            estado.Text = dt.Rows[0]["estado"].ToString();
+            numCelular.Text = dt.Rows[0]["celular"].ToString();
+            email.Text = dt.Rows[0]["email"].ToString();
+            observacoes.Text = dt.Rows[0]["observacoes"].ToString();
+
+            if (dt.Rows[0]["documento"].ToString().Length == 11)
+                cpf.Checked = true;
+            else
+                cnpj.Checked = true;
+
+            documento.Text = dt.Rows[0]["documento"].ToString();
+
+            if (dt.Rows[0]["genero"].ToString() == "Masculino")
+                masculino.Checked = true;
+            else if (dt.Rows[0]["genero"].ToString() == "Feminino")
+                feminino.Checked = true;
+            else
+                outroGenero.Checked = true;
+
+            if (dt.Rows[0]["situacao"].ToString() == "Ativo")
+                situacao.Checked = true;
+            else
+                situacao.Checked = false;
+
+            if (File.Exists(fotos_clientes + id.Text + ".jpg"))
             {
-                conexao.Open();
-
-                using (SqlCommand cmd = conexao.CreateCommand())
-                {
-                    //cmd.CommandText = "SELECT * FROM clientes WHERE id = " + id.Text;
-                    cmd.CommandText = "SELECT * FROM clientes WHERE id = @id";
-                    cmd.Parameters.AddWithValue("@id", id.Text);
-
-                    DataTable dt = new DataTable();
-
-                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                    {
-                        da.Fill(dt);
-
-                        nomeCliente.Text = dt.Rows[0]["nome"].ToString();
-                        rg.Text = dt.Rows[0]["rg"].ToString();
-                        estado_civil.Text = dt.Rows[0]["estado_civil"].ToString();
-                        dtNasc.Text = dt.Rows[0]["dt_nascimento"].ToString();
-                        cep.Text = dt.Rows[0]["cep"].ToString();
-                        endereco.Text = dt.Rows[0]["endereco"].ToString();
-                        num_casa.Text = dt.Rows[0]["numero"].ToString();
-                        bairro.Text = dt.Rows[0]["bairro"].ToString();
-                        cidade.Text = dt.Rows[0]["cidade"].ToString();
-                        estado.Text = dt.Rows[0]["estado"].ToString();
-                        numCelular.Text = dt.Rows[0]["celular"].ToString();
-                        email.Text = dt.Rows[0]["email"].ToString();
-                        observacoes.Text = dt.Rows[0]["observacoes"].ToString();
-
-                        if (dt.Rows[0]["documento"].ToString().Length == 11)
-                            cpf.Checked = true;
-                        else
-                            cnpj.Checked = true;
-
-                        documento.Text = dt.Rows[0]["documento"].ToString();
-
-                        if (dt.Rows[0]["genero"].ToString() == "Masculino")
-                            masculino.Checked = true;
-                        else if (dt.Rows[0]["genero"].ToString() == "Feminino")
-                            feminino.Checked = true;
-                        else
-                            outroGenero.Checked = true;
-
-                        if (dt.Rows[0]["situacao"].ToString() == "Ativo")
-                            situacao.Checked = true;
-                        else
-                            situacao.Checked = false;
-
-                        if (File.Exists(fotos_clientes + id.Text + ".jpg"))
-                        {
-                            fotoCliente.Image = Image.FromFile(fotos_clientes + id.Text + ".jpg");
-                        }
-                        else
-                            fotoCliente.Image = Properties.Resources.avatar;
-                    }
-                }
+                fotoCliente.Image = Image.FromFile(fotos_clientes + id.Text + ".jpg");
             }
+            else
+                fotoCliente.Image = Properties.Resources.avatar;
         }
     }
 }

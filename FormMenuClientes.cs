@@ -16,5 +16,11 @@ namespace menu_clientes
         {
             InitializeComponent();
         }
+
+        private void btAddCliente_Click(object sender, EventArgs e)
+        {
+            FormCadastroCliente fcc = new FormCadastroCliente();
+            fcc.ShowDialog();
+        }
     }
 }

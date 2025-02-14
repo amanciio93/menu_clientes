@@ -516,6 +516,7 @@
             // 
             this.endereco.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.endereco.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.endereco.DisplayMember = "endereco";
             this.endereco.DropDownHeight = 200;
             this.endereco.FormattingEnabled = true;
             this.endereco.IntegralHeight = false;
@@ -529,6 +530,7 @@
             // 
             this.bairro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.bairro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.bairro.DisplayMember = "bairro";
             this.bairro.DropDownHeight = 200;
             this.bairro.FormattingEnabled = true;
             this.bairro.IntegralHeight = false;
@@ -542,6 +544,7 @@
             // 
             this.cidade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cidade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cidade.DisplayMember = "cidade";
             this.cidade.DropDownHeight = 200;
             this.cidade.FormattingEnabled = true;
             this.cidade.IntegralHeight = false;
