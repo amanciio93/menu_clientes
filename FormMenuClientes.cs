@@ -20,7 +20,13 @@ namespace menu_clientes
         private void btAddCliente_Click(object sender, EventArgs e)
         {
             FormCadastroCliente fcc = new FormCadastroCliente();
+
             fcc.ShowDialog();
         }
+
+        private void FormMenuClientes_Load(object sender, EventArgs e)
+        {
+            dgLista.DataSource = Funcoes.buscaSQL("SELECT * FROM clientes;");
+        }        
     }
 }
