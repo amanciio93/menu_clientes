@@ -181,7 +181,7 @@
   <data name="btAddCliente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAyhJREFUaEPtmUvrTVEUwH/eyqNMPQsTX4BPQKGUCRMTY4UJE0lMGGBA+QAeZcR/
+        vgAADr4B6kKxwAAAAyhJREFUaEPtmUvrTVEUwH/eyqNMPQsTX4BPQKGUCRMTY4UJE0lMGGBA+QAeZcR/
         IJGBUHwBExMGKExk5k2/OrtW27n3PJx7zv/W/dWu3dlrrb32uXuvtfa5MGPGjBnTzgrgMHAHeAN8LZp9
         nzmmzLxjAXAE+AT8qWjKKKvOvGAlcK/E0aqmjrqDshx4kjn2CjgGbAOWFc3+0WIsyj4tbAzGteDML+As
         sCQXCjimjLJJTxuDsD1zxH1dF2V/h4XvyAX64G5w/nY+WAN1kv5cPjhp1gDfisl/AltzgRqoo642tKXN
@@ -199,6 +199,9 @@
 </value>
   </data>
   <metadata name="id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="foto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="nome.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
