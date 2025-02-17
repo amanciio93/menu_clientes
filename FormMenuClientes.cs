@@ -77,9 +77,47 @@ namespace menu_clientes
 
         private void buscarClientes() 
         {
-            dgLista.DataSource = Funcoes.buscaSQL("SELECT * FROM clientes;");
+            dgLista.DataSource = Funcoes.buscaSQL("SELECT * FROM clientes WHERE 1 = 1" + gerarCriterios());
 
             reorganizar();
+        }
+
+        private void searchId_TextChanged(object sender, EventArgs e)
+        {
+            buscarClientes();
+        }
+
+        private string gerarCriterios()
+        {
+
+            string c = "";
+
+            if (searchId.Text != string.Empty)
+            {
+                c += " AND id = " + searchId.Text;
+            }
+
+            if (searchNome.Text != string.Empty)
+            {
+                c += $" AND (nome LIKE '%{searchNome.Text}%' OR documento LIKE '%{searchNome.Text}%')";
+            }
+
+            if (searchGenero.Text != string.Empty)
+            {
+                c += $" AND genero = '{searchGenero.Text}'";
+            }
+
+            if (searchEstadoCivil.Text != string.Empty)
+            {
+                c += $" AND estado_civil = '{searchEstadoCivil.Text}'";
+            }
+
+            return c;
+        }
+
+        private void searchNome_TextChanged(object sender, EventArgs e)
+        {
+            buscarClientes();
         }
     }
 }

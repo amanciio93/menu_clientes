@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btGerarFicha = new System.Windows.Forms.Button();
             this.btGerarPDF = new System.Windows.Forms.Button();
@@ -62,8 +62,16 @@
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.searchId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.searchNome = new System.Windows.Forms.TextBox();
+            this.searchGenero = new System.Windows.Forms.ComboBox();
+            this.searchEstadoCivil = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgLista)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -141,18 +149,18 @@
             // 
             this.dgLista.AllowUserToAddRows = false;
             this.dgLista.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Silver;
-            this.dgLista.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.dgLista.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgLista.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgLista.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgLista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgLista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgLista.ColumnHeadersHeight = 35;
             this.dgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -191,8 +199,8 @@
             // id
             // 
             this.id.DataPropertyName = "id";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.id.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.id.DefaultCellStyle = dataGridViewCellStyle3;
             this.id.HeaderText = "N°";
             this.id.Name = "id";
             this.id.ReadOnly = true;
@@ -217,8 +225,8 @@
             // dt_nascimento
             // 
             this.dt_nascimento.DataPropertyName = "dt_nascimento";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dt_nascimento.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dt_nascimento.DefaultCellStyle = dataGridViewCellStyle4;
             this.dt_nascimento.HeaderText = "Nascimento";
             this.dt_nascimento.Name = "dt_nascimento";
             this.dt_nascimento.ReadOnly = true;
@@ -226,8 +234,8 @@
             // documento
             // 
             this.documento.DataPropertyName = "documento";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.documento.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.documento.DefaultCellStyle = dataGridViewCellStyle5;
             this.documento.HeaderText = "CPF/CNPJ";
             this.documento.Name = "documento";
             this.documento.ReadOnly = true;
@@ -236,8 +244,8 @@
             // rg
             // 
             this.rg.DataPropertyName = "rg";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.rg.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.rg.DefaultCellStyle = dataGridViewCellStyle6;
             this.rg.HeaderText = "RG";
             this.rg.Name = "rg";
             this.rg.ReadOnly = true;
@@ -262,8 +270,8 @@
             // celular
             // 
             this.celular.DataPropertyName = "celular";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.celular.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.celular.DefaultCellStyle = dataGridViewCellStyle7;
             this.celular.HeaderText = "N° Celular";
             this.celular.Name = "celular";
             this.celular.ReadOnly = true;
@@ -296,8 +304,8 @@
             // numero
             // 
             this.numero.DataPropertyName = "numero";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numero.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numero.DefaultCellStyle = dataGridViewCellStyle8;
             this.numero.HeaderText = "N° Casa";
             this.numero.Name = "numero";
             this.numero.ReadOnly = true;
@@ -338,12 +346,108 @@
             // situacao
             // 
             this.situacao.DataPropertyName = "situacao";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.situacao.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.situacao.DefaultCellStyle = dataGridViewCellStyle9;
             this.situacao.HeaderText = "Situação";
             this.situacao.Name = "situacao";
             this.situacao.ReadOnly = true;
             this.situacao.Width = 75;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.searchEstadoCivil);
+            this.groupBox2.Controls.Add(this.searchGenero);
+            this.groupBox2.Controls.Add(this.searchNome);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.searchId);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox2.Location = new System.Drawing.Point(271, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(980, 70);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Opções de consulta";
+            // 
+            // searchId
+            // 
+            this.searchId.ForeColor = System.Drawing.Color.Black;
+            this.searchId.Location = new System.Drawing.Point(6, 39);
+            this.searchId.Name = "searchId";
+            this.searchId.Size = new System.Drawing.Size(61, 25);
+            this.searchId.TabIndex = 1;
+            this.searchId.TextChanged += new System.EventHandler(this.searchId_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(4, 16);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "N°";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(71, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(223, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nome / CPF ou CNPJ do cliente";
+            // 
+            // searchNome
+            // 
+            this.searchNome.ForeColor = System.Drawing.Color.Black;
+            this.searchNome.Location = new System.Drawing.Point(73, 39);
+            this.searchNome.Name = "searchNome";
+            this.searchNome.Size = new System.Drawing.Size(285, 25);
+            this.searchNome.TabIndex = 1;
+            this.searchNome.TextChanged += new System.EventHandler(this.searchNome_TextChanged);
+            // 
+            // searchGenero
+            // 
+            this.searchGenero.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchGenero.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.searchGenero.DropDownHeight = 200;
+            this.searchGenero.FormattingEnabled = true;
+            this.searchGenero.IntegralHeight = false;
+            this.searchGenero.Items.AddRange(new object[] {
+            "Masculino",
+            "Feminino",
+            "Outros"});
+            this.searchGenero.Location = new System.Drawing.Point(364, 39);
+            this.searchGenero.Name = "searchGenero";
+            this.searchGenero.Size = new System.Drawing.Size(132, 26);
+            this.searchGenero.TabIndex = 6;
+            this.searchGenero.TextChanged += new System.EventHandler(this.searchId_TextChanged);
+            // 
+            // searchEstadoCivil
+            // 
+            this.searchEstadoCivil.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchEstadoCivil.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.searchEstadoCivil.DropDownHeight = 200;
+            this.searchEstadoCivil.FormattingEnabled = true;
+            this.searchEstadoCivil.IntegralHeight = false;
+            this.searchEstadoCivil.Items.AddRange(new object[] {
+            "Viuvo (a)",
+            "Casado (a)",
+            "Divorciado (a)",
+            "Separado (a)",
+            "Solteiro (a)"});
+            this.searchEstadoCivil.Location = new System.Drawing.Point(502, 39);
+            this.searchEstadoCivil.Name = "searchEstadoCivil";
+            this.searchEstadoCivil.Size = new System.Drawing.Size(148, 26);
+            this.searchEstadoCivil.TabIndex = 7;
+            this.searchEstadoCivil.TextChanged += new System.EventHandler(this.searchId_TextChanged);
             // 
             // FormMenuClientes
             // 
@@ -352,6 +456,7 @@
             this.BackgroundImage = global::menu_clientes.Properties.Resources.backGradiente1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgLista);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
@@ -364,6 +469,8 @@
             this.Load += new System.EventHandler(this.FormMenuClientes_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgLista)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -394,5 +501,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoes;
         private System.Windows.Forms.DataGridViewTextBoxColumn situacao;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox searchId;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox searchNome;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox searchEstadoCivil;
+        private System.Windows.Forms.ComboBox searchGenero;
     }
 }
