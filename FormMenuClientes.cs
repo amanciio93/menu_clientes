@@ -72,14 +72,16 @@ namespace menu_clientes
             frm.ShowDialog();
 
             buscarClientes();
-            
+
         }
 
-        private void buscarClientes() 
+        private void buscarClientes()
         {
             dgLista.DataSource = Funcoes.buscaSQL("SELECT * FROM clientes WHERE 1 = 1" + gerarCriterios());
 
             reorganizar();
+
+            rodape();
         }
 
         private void searchId_TextChanged(object sender, EventArgs e)
@@ -112,6 +114,30 @@ namespace menu_clientes
                 c += $" AND estado_civil = '{searchEstadoCivil.Text}'";
             }
 
+            if (searchEndereco.Text != string.Empty)
+            {
+                c += $" AND (endereco LIKE '%{searchEndereco.Text}%' OR numero LIKE '%{searchEndereco.Text}%' OR bairro LIKE '%{searchEndereco.Text}%' OR cidade LIKE '%{searchEndereco.Text}%' OR cep LIKE '%{searchEndereco.Text}%' OR estado LIKE '%{searchEndereco.Text}%')";
+            }
+
+            try
+            {
+                DateTime dtNasc = Convert.ToDateTime(searchNasc.Text);
+                c += $" AND dt_nascimento = '{dtNasc.ToString("yyyy-MM-dd")}'";
+            }
+            catch (Exception)
+            {
+
+            }
+
+            if (searchAtivo.Checked == true)
+            {
+                c += " AND situacao = 'Ativo'";
+            }
+            else if (searchInativos.Checked == true)
+            {
+                c += " AND situacao = 'Inativo'";
+            }
+
             return c;
         }
 
@@ -119,5 +145,40 @@ namespace menu_clientes
         {
             buscarClientes();
         }
+
+        private void searchAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (searchAll.Checked == true)
+                buscarClientes();
+        }
+
+        private void searchAtivo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (searchAtivo.Checked == true)
+                buscarClientes();
+        }
+
+        private void searchInativos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (searchInativos.Checked == true)
+                buscarClientes();
+        }
+
+        private void rodape()
+        {
+            totalLocalizado.Text = "Total localizado: " + dgLista.RowCount;
+
+            int cont = 0;
+
+            foreach (DataGridViewRow linha in dgLista.Rows)
+            {
+                if (linha.Cells["situacao"].Value.ToString() == "Inativo")
+                    cont++;
+            }
+
+            totalInativos.Text = "Inativos: " + cont.ToString();
+            totalAtivos.Text = "Ativos: " + (dgLista.RowCount -  cont).ToString();
+
+        } 
     }
 }

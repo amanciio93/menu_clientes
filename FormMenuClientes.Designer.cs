@@ -63,12 +63,24 @@
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.searchEndereco = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.searchEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.searchGenero = new System.Windows.Forms.ComboBox();
+            this.searchNome = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.searchId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.searchNome = new System.Windows.Forms.TextBox();
-            this.searchGenero = new System.Windows.Forms.ComboBox();
-            this.searchEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.searchNasc = new System.Windows.Forms.TextBox();
+            this.searchAll = new System.Windows.Forms.RadioButton();
+            this.searchInativos = new System.Windows.Forms.RadioButton();
+            this.searchAtivo = new System.Windows.Forms.RadioButton();
+            this.totalLocalizado = new System.Windows.Forms.Label();
+            this.totalAtivos = new System.Windows.Forms.Label();
+            this.totalInativos = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgLista)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -151,6 +163,7 @@
             this.dgLista.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
             this.dgLista.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgLista.BackgroundColor = System.Drawing.Color.White;
             this.dgLista.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgLista.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -355,6 +368,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.searchAtivo);
+            this.groupBox2.Controls.Add(this.searchInativos);
+            this.groupBox2.Controls.Add(this.searchAll);
+            this.groupBox2.Controls.Add(this.searchNasc);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.searchEndereco);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.searchEstadoCivil);
             this.groupBox2.Controls.Add(this.searchGenero);
             this.groupBox2.Controls.Add(this.searchNome);
@@ -368,6 +390,112 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opções de consulta";
+            // 
+            // searchEndereco
+            // 
+            this.searchEndereco.ForeColor = System.Drawing.Color.Black;
+            this.searchEndereco.Location = new System.Drawing.Point(582, 37);
+            this.searchEndereco.Name = "searchEndereco";
+            this.searchEndereco.Size = new System.Drawing.Size(160, 25);
+            this.searchEndereco.TabIndex = 10;
+            this.searchEndereco.TextChanged += new System.EventHandler(this.searchId_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(579, 14);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(124, 18);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Endereços gerais";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(462, 16);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 18);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Estado civil";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(349, 16);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 18);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Genero";
+            // 
+            // searchEstadoCivil
+            // 
+            this.searchEstadoCivil.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchEstadoCivil.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.searchEstadoCivil.DropDownHeight = 200;
+            this.searchEstadoCivil.FormattingEnabled = true;
+            this.searchEstadoCivil.IntegralHeight = false;
+            this.searchEstadoCivil.Items.AddRange(new object[] {
+            "Viuvo (a)",
+            "Casado (a)",
+            "Divorciado (a)",
+            "Separado (a)",
+            "Solteiro (a)"});
+            this.searchEstadoCivil.Location = new System.Drawing.Point(465, 37);
+            this.searchEstadoCivil.Name = "searchEstadoCivil";
+            this.searchEstadoCivil.Size = new System.Drawing.Size(111, 26);
+            this.searchEstadoCivil.TabIndex = 7;
+            this.searchEstadoCivil.TextChanged += new System.EventHandler(this.searchId_TextChanged);
+            // 
+            // searchGenero
+            // 
+            this.searchGenero.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchGenero.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.searchGenero.DropDownHeight = 200;
+            this.searchGenero.FormattingEnabled = true;
+            this.searchGenero.IntegralHeight = false;
+            this.searchGenero.Items.AddRange(new object[] {
+            "Masculino",
+            "Feminino",
+            "Outros"});
+            this.searchGenero.Location = new System.Drawing.Point(352, 37);
+            this.searchGenero.Name = "searchGenero";
+            this.searchGenero.Size = new System.Drawing.Size(107, 26);
+            this.searchGenero.TabIndex = 6;
+            this.searchGenero.TextChanged += new System.EventHandler(this.searchId_TextChanged);
+            // 
+            // searchNome
+            // 
+            this.searchNome.ForeColor = System.Drawing.Color.Black;
+            this.searchNome.Location = new System.Drawing.Point(73, 39);
+            this.searchNome.Name = "searchNome";
+            this.searchNome.Size = new System.Drawing.Size(273, 25);
+            this.searchNome.TabIndex = 1;
+            this.searchNome.TextChanged += new System.EventHandler(this.searchNome_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(71, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nome / CPF ou CNPJ";
             // 
             // searchId
             // 
@@ -391,63 +519,106 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "N°";
             // 
-            // label1
+            // label6
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(71, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nome / CPF ou CNPJ do cliente";
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(746, 14);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 18);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Nascimento";
             // 
-            // searchNome
+            // searchNasc
             // 
-            this.searchNome.ForeColor = System.Drawing.Color.Black;
-            this.searchNome.Location = new System.Drawing.Point(73, 39);
-            this.searchNome.Name = "searchNome";
-            this.searchNome.Size = new System.Drawing.Size(285, 25);
-            this.searchNome.TabIndex = 1;
-            this.searchNome.TextChanged += new System.EventHandler(this.searchNome_TextChanged);
+            this.searchNasc.ForeColor = System.Drawing.Color.Black;
+            this.searchNasc.Location = new System.Drawing.Point(748, 37);
+            this.searchNasc.Name = "searchNasc";
+            this.searchNasc.Size = new System.Drawing.Size(103, 25);
+            this.searchNasc.TabIndex = 10;
+            this.searchNasc.TextChanged += new System.EventHandler(this.searchId_TextChanged);
             // 
-            // searchGenero
+            // searchAll
             // 
-            this.searchGenero.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.searchGenero.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.searchGenero.DropDownHeight = 200;
-            this.searchGenero.FormattingEnabled = true;
-            this.searchGenero.IntegralHeight = false;
-            this.searchGenero.Items.AddRange(new object[] {
-            "Masculino",
-            "Feminino",
-            "Outros"});
-            this.searchGenero.Location = new System.Drawing.Point(364, 39);
-            this.searchGenero.Name = "searchGenero";
-            this.searchGenero.Size = new System.Drawing.Size(132, 26);
-            this.searchGenero.TabIndex = 6;
-            this.searchGenero.TextChanged += new System.EventHandler(this.searchId_TextChanged);
+            this.searchAll.AutoSize = true;
+            this.searchAll.BackColor = System.Drawing.Color.Transparent;
+            this.searchAll.Checked = true;
+            this.searchAll.Location = new System.Drawing.Point(876, 10);
+            this.searchAll.Name = "searchAll";
+            this.searchAll.Size = new System.Drawing.Size(66, 22);
+            this.searchAll.TabIndex = 3;
+            this.searchAll.TabStop = true;
+            this.searchAll.Text = "Todos";
+            this.searchAll.UseVisualStyleBackColor = false;
+            this.searchAll.CheckedChanged += new System.EventHandler(this.searchAll_CheckedChanged);
             // 
-            // searchEstadoCivil
+            // searchInativos
             // 
-            this.searchEstadoCivil.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.searchEstadoCivil.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.searchEstadoCivil.DropDownHeight = 200;
-            this.searchEstadoCivil.FormattingEnabled = true;
-            this.searchEstadoCivil.IntegralHeight = false;
-            this.searchEstadoCivil.Items.AddRange(new object[] {
-            "Viuvo (a)",
-            "Casado (a)",
-            "Divorciado (a)",
-            "Separado (a)",
-            "Solteiro (a)"});
-            this.searchEstadoCivil.Location = new System.Drawing.Point(502, 39);
-            this.searchEstadoCivil.Name = "searchEstadoCivil";
-            this.searchEstadoCivil.Size = new System.Drawing.Size(148, 26);
-            this.searchEstadoCivil.TabIndex = 7;
-            this.searchEstadoCivil.TextChanged += new System.EventHandler(this.searchId_TextChanged);
+            this.searchInativos.AutoSize = true;
+            this.searchInativos.BackColor = System.Drawing.Color.Transparent;
+            this.searchInativos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.searchInativos.Location = new System.Drawing.Point(876, 50);
+            this.searchInativos.Name = "searchInativos";
+            this.searchInativos.Size = new System.Drawing.Size(90, 22);
+            this.searchInativos.TabIndex = 12;
+            this.searchInativos.Text = "Inativos";
+            this.searchInativos.UseVisualStyleBackColor = false;
+            this.searchInativos.CheckedChanged += new System.EventHandler(this.searchInativos_CheckedChanged);
+            // 
+            // searchAtivo
+            // 
+            this.searchAtivo.AutoSize = true;
+            this.searchAtivo.BackColor = System.Drawing.Color.Transparent;
+            this.searchAtivo.ForeColor = System.Drawing.Color.Green;
+            this.searchAtivo.Location = new System.Drawing.Point(876, 29);
+            this.searchAtivo.Name = "searchAtivo";
+            this.searchAtivo.Size = new System.Drawing.Size(74, 22);
+            this.searchAtivo.TabIndex = 13;
+            this.searchAtivo.Text = "Ativos";
+            this.searchAtivo.UseVisualStyleBackColor = false;
+            this.searchAtivo.CheckedChanged += new System.EventHandler(this.searchAtivo_CheckedChanged);
+            // 
+            // totalLocalizado
+            // 
+            this.totalLocalizado.AutoSize = true;
+            this.totalLocalizado.BackColor = System.Drawing.Color.Transparent;
+            this.totalLocalizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLocalizado.ForeColor = System.Drawing.Color.Black;
+            this.totalLocalizado.Location = new System.Drawing.Point(17, 642);
+            this.totalLocalizado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.totalLocalizado.Name = "totalLocalizado";
+            this.totalLocalizado.Size = new System.Drawing.Size(120, 18);
+            this.totalLocalizado.TabIndex = 3;
+            this.totalLocalizado.Text = "Total localizado: ";
+            // 
+            // totalAtivos
+            // 
+            this.totalAtivos.AutoSize = true;
+            this.totalAtivos.BackColor = System.Drawing.Color.Transparent;
+            this.totalAtivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalAtivos.ForeColor = System.Drawing.Color.Black;
+            this.totalAtivos.Location = new System.Drawing.Point(268, 642);
+            this.totalAtivos.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.totalAtivos.Name = "totalAtivos";
+            this.totalAtivos.Size = new System.Drawing.Size(56, 18);
+            this.totalAtivos.TabIndex = 3;
+            this.totalAtivos.Text = "Ativos: ";
+            // 
+            // totalInativos
+            // 
+            this.totalInativos.AutoSize = true;
+            this.totalInativos.BackColor = System.Drawing.Color.Transparent;
+            this.totalInativos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalInativos.ForeColor = System.Drawing.Color.Black;
+            this.totalInativos.Location = new System.Drawing.Point(519, 642);
+            this.totalInativos.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.totalInativos.Name = "totalInativos";
+            this.totalInativos.Size = new System.Drawing.Size(66, 18);
+            this.totalInativos.TabIndex = 3;
+            this.totalInativos.Text = "Inativos: ";
             // 
             // FormMenuClientes
             // 
@@ -456,6 +627,9 @@
             this.BackgroundImage = global::menu_clientes.Properties.Resources.backGradiente1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.totalInativos);
+            this.Controls.Add(this.totalAtivos);
+            this.Controls.Add(this.totalLocalizado);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgLista);
             this.Controls.Add(this.groupBox1);
@@ -472,6 +646,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -508,5 +683,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox searchEstadoCivil;
         private System.Windows.Forms.ComboBox searchGenero;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox searchEndereco;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox searchNasc;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton searchAtivo;
+        private System.Windows.Forms.RadioButton searchInativos;
+        private System.Windows.Forms.RadioButton searchAll;
+        private System.Windows.Forms.Label totalLocalizado;
+        private System.Windows.Forms.Label totalAtivos;
+        private System.Windows.Forms.Label totalInativos;
     }
 }
