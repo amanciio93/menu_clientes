@@ -395,8 +395,7 @@ namespace menu_clientes
 
             DataTable dt = new DataTable();
 
-            Funcoes.buscaSQL("SELECT * FROM clientes WHERE id = " + id.Text);
-
+            dt = Funcoes.buscaSQL("SELECT * FROM clientes WHERE id = " + id.Text);
 
             nomeCliente.Text = dt.Rows[0]["nome"].ToString();
             rg.Text = dt.Rows[0]["rg"].ToString();

@@ -745,7 +745,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.TextBox nomeCliente;
         private System.Windows.Forms.TextBox rg;
         private System.Windows.Forms.TextBox num_casa;
@@ -774,6 +773,7 @@
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Button btFechar;
         private System.Windows.Forms.Button btNovo;
+        public System.Windows.Forms.TextBox id;
     }
 }
 

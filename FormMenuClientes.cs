@@ -26,16 +26,29 @@ namespace menu_clientes
             FormCadastroCliente fcc = new FormCadastroCliente();
 
             fcc.ShowDialog();
+
+            buscarClientes();
         }
 
         private void FormMenuClientes_Load(object sender, EventArgs e)
         {
-            dgLista.DataSource = Funcoes.buscaSQL("SELECT * FROM clientes;");
+            buscarClientes();
+        }
+
+        private void dgLista_Sorted(object sender, EventArgs e)
+        {
+            reorganizar();
+        }
+
+        private void reorganizar() {
+
+            dgLista.ClearSelection();
+            btEditarCliente.Enabled = false;
 
             foreach (DataGridViewRow linha in dgLista.Rows)
             {
                 if (linha.Cells["situacao"].Value.ToString() == "Inativo")
-                { 
+                {
                     linha.DefaultCellStyle.ForeColor = Color.Red;
                 }
                 if (File.Exists(fotos_clientes + linha.Cells["id"].Value.ToString() + ".jpg"))
@@ -43,6 +56,30 @@ namespace menu_clientes
                 else
                     linha.Cells["Foto"].Value = Properties.Resources.avatar;
             }
-        }        
+        }
+
+        private void dgLista_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btEditarCliente.Enabled = true;
+        }
+
+        private void btEditarCliente_Click(object sender, EventArgs e)
+        {
+            FormCadastroCliente frm = new FormCadastroCliente();
+
+            frm.id.Text = dgLista.CurrentRow.Cells["id"].Value.ToString();
+
+            frm.ShowDialog();
+
+            buscarClientes();
+            
+        }
+
+        private void buscarClientes() 
+        {
+            dgLista.DataSource = Funcoes.buscaSQL("SELECT * FROM clientes;");
+
+            reorganizar();
+        }
     }
 }
