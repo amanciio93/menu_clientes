@@ -481,7 +481,7 @@ namespace menu_clientes
 
             if (File.Exists(fotos_clientes + id.Text + ".jpg"))
             {
-                fotoCliente.Image = Image.FromFile(fotos_clientes + id.Text + ".jpg");
+                fotoCliente.LoadAsync(fotos_clientes + id.Text + ".jpg");
             }
             else
                 fotoCliente.Image = Properties.Resources.avatar;

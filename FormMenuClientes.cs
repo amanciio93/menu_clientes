@@ -52,7 +52,12 @@ namespace menu_clientes
                     linha.DefaultCellStyle.ForeColor = Color.Red;
                 }
                 if (File.Exists(fotos_clientes + linha.Cells["id"].Value.ToString() + ".jpg"))
-                    linha.Cells["foto"].Value = Image.FromFile(fotos_clientes + linha.Cells["id"].Value.ToString() + ".jpg");
+                    //linha.Cells["foto"].Value = Image.FromFile(fotos_clientes + linha.Cells["id"].Value.ToString() + ".jpg");
+                    using (FileStream temp = new FileStream(fotos_clientes + linha.Cells["id"].Value.ToString() + ".jpg", FileMode.Open, FileAccess.Read))
+                    {
+                        Image img = Image.FromStream(temp);
+                        linha.Cells["foto"].Value = img;
+                    }
                 else
                     linha.Cells["Foto"].Value = Properties.Resources.avatar;
             }
