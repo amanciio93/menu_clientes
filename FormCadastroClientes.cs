@@ -306,7 +306,6 @@ namespace menu_clientes
 
             consultandoCep.Visible = true;
             //Application.DoEvents();
-
             endereco.Text = string.Empty;
             bairro.Text = string.Empty;
             cidade.Text = string.Empty;
@@ -337,7 +336,6 @@ namespace menu_clientes
                                 break;
                             }
                         }
-
                     }
                     else
                     {

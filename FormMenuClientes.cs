@@ -78,10 +78,19 @@ namespace menu_clientes
         private void buscarClientes()
         {
             dgLista.DataSource = Funcoes.buscaSQL("SELECT * FROM clientes WHERE 1 = 1" + gerarCriterios());
+            if ((dgLista.RowCount * 30) + 55 > 530)
+                dgLista.Height = 530;
+            else
+                dgLista.Height = (dgLista.RowCount * 30) + 55;
 
             reorganizar();
 
             rodape();
+
+            if (dgLista.RowCount == 0)
+                nadaEncontrado.Visible = true;
+            else
+                nadaEncontrado.Visible = false;
         }
 
         private void searchId_TextChanged(object sender, EventArgs e)
@@ -179,6 +188,24 @@ namespace menu_clientes
             totalInativos.Text = "Inativos: " + cont.ToString();
             totalAtivos.Text = "Ativos: " + (dgLista.RowCount -  cont).ToString();
 
-        } 
+        }
+
+        private void dgLista_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+                return;
+
+            dgLista.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.DarkSlateGray;
+        }
+
+        private void dgLista_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+                return;
+
+            //Usando condição ternária;
+            dgLista.Rows[e.RowIndex].DefaultCellStyle.BackColor = 
+                (e.RowIndex % 2 == 0 ? Color.White : Color.Silver);
+        }
     }
 }
