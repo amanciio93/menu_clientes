@@ -9,3 +9,6 @@ C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.pdb
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.FormCadastroCliente.resources
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.FormMenuClientes.resources
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\Newtonsoft.Json.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\Newtonsoft.Json.xml
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_cli.9C039F6E.Up2Date

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography; // Importa o pacote para trabalhar com o SQL Server;
 using System.IO;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 
 namespace menu_clientes
@@ -301,6 +303,55 @@ namespace menu_clientes
                 Funcoes.msgErro("Formato de CEP inválido");
                 e.Cancel = true;
             }
+
+            consultandoCep.Visible = true;
+            //Application.DoEvents();
+
+            endereco.Text = string.Empty;
+            bairro.Text = string.Empty;
+            cidade.Text = string.Empty;
+            estado.Text = string.Empty;
+
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    HttpResponseMessage resposta = client.GetAsync($"https://viacep.com.br/ws/{cep.Text}/json/").Result;
+
+                    //MessageBox.Show(resposta.Content.ReadAsStringAsync().Result);                
+
+                    dynamic respCepJson = JsonConvert.DeserializeObject(resposta.Content.ReadAsStringAsync().Result);
+
+                    if (respCepJson.erro == null)
+                    {
+                        endereco.Text = respCepJson.logradouro.ToString();
+                        bairro.Text = respCepJson.bairro.ToString();
+                        cidade.Text = respCepJson.localidade.ToString();
+                        estado.Text = respCepJson.uf.ToString();
+
+                        foreach (var item in estado.Items)
+                        {
+                            if (item.ToString().Contains($"({estado.Text})"))
+                            { 
+                                estado.Text = item.ToString();
+                                break;
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("CEP Não encontrado.");
+                    }
+                }
+                catch (Exception)
+                {
+                    Funcoes.msgErro("Ocorreu um erro na busca pelo CEP.\rVerifique a conexão com a Internet.");                        
+                }
+
+            }
+
+            consultandoCep.Visible = false;
         }
 
         private void documento_Validating(object sender, CancelEventArgs e)

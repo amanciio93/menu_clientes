@@ -72,6 +72,7 @@
             this.btSalvar = new System.Windows.Forms.Button();
             this.btFechar = new System.Windows.Forms.Button();
             this.btNovo = new System.Windows.Forms.Button();
+            this.consultandoCep = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fotoCliente)).BeginInit();
             this.SuspendLayout();
@@ -461,32 +462,33 @@
             this.estado.FormattingEnabled = true;
             this.estado.IntegralHeight = false;
             this.estado.Items.AddRange(new object[] {
-            "Acre",
-            "Alagoas",
-            "Amapá",
-            "Amazonas",
-            "Bahia",
-            "Ceará",
-            "Espírito Santo",
-            "Goiás",
-            "Maranhão",
-            "Mato Grosso",
-            "Mato Grosso do Sul",
-            "Minas Gerais",
-            "Pará",
-            "Paraíba",
-            "Paraná",
-            "Pernambuco",
-            "Piauí",
-            "Rio de Janeiro",
-            "Rio Grande do Norte",
-            "Rio Grande do Sul",
-            "Rondônia",
-            "Roraima",
-            "Santa Catarina",
-            "São Paulo",
-            "Sergipe",
-            "Tocantins"});
+            "Acre (AC)",
+            "Alagoas (AL)",
+            "Amapá (AP)",
+            "Amazonas (AM)",
+            "Bahia (BA)",
+            "Ceará (CE)",
+            "Distrito Federal (DF)",
+            "Espírito Santo (ES)",
+            "Goiás (GO)",
+            "Maranhão (MA)",
+            "Mato Grosso (MT)",
+            "Mato Grosso do Sul (MS)",
+            "Minas Gerais (MG)",
+            "Pará (PA)",
+            "Paraíba (PB)",
+            "Paraná (PR)",
+            "Pernambuco (PE)",
+            "Piauí (PI)",
+            "Rio de Janeiro (RJ)",
+            "Rio Grande do Norte (RN)",
+            "Rio Grande do Sul (RS)",
+            "Rondônia (RO)",
+            "Roraima (RR)",
+            "Santa Catarina (SC)",
+            "São Paulo (SP)",
+            "Sergipe (SE)",
+            "Tocantins (TO)"});
             this.estado.Location = new System.Drawing.Point(14, 388);
             this.estado.Name = "estado";
             this.estado.Size = new System.Drawing.Size(311, 26);
@@ -660,6 +662,20 @@
             this.btNovo.UseVisualStyleBackColor = false;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
+            // consultandoCep
+            // 
+            this.consultandoCep.AutoSize = true;
+            this.consultandoCep.BackColor = System.Drawing.Color.Transparent;
+            this.consultandoCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.consultandoCep.ForeColor = System.Drawing.Color.DimGray;
+            this.consultandoCep.Location = new System.Drawing.Point(11, 286);
+            this.consultandoCep.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.consultandoCep.Name = "consultandoCep";
+            this.consultandoCep.Size = new System.Drawing.Size(99, 13);
+            this.consultandoCep.TabIndex = 100;
+            this.consultandoCep.Text = "Consultando CEP...";
+            this.consultandoCep.Visible = false;
+            // 
             // FormCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -668,6 +684,7 @@
             this.BackgroundImage = global::menu_clientes.Properties.Resources.backGradiente1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(734, 661);
+            this.Controls.Add(this.consultandoCep);
             this.Controls.Add(this.btNovo);
             this.Controls.Add(this.btFechar);
             this.Controls.Add(this.btSalvar);
@@ -774,6 +791,7 @@
         private System.Windows.Forms.Button btFechar;
         private System.Windows.Forms.Button btNovo;
         public System.Windows.Forms.TextBox id;
+        private System.Windows.Forms.Label consultandoCep;
     }
 }
 
