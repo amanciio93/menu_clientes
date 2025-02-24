@@ -82,6 +82,7 @@
             this.totalAtivos = new System.Windows.Forms.Label();
             this.totalInativos = new System.Windows.Forms.Label();
             this.nadaEncontrado = new System.Windows.Forms.Label();
+            this.reportFicha = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgLista)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -128,6 +129,7 @@
             this.btGerarPDF.Size = new System.Drawing.Size(48, 48);
             this.btGerarPDF.TabIndex = 4;
             this.btGerarPDF.UseVisualStyleBackColor = false;
+            this.btGerarPDF.Click += new System.EventHandler(this.btGerarPDF_Click);
             // 
             // btEditarCliente
             // 
@@ -637,6 +639,16 @@
             this.nadaEncontrado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.nadaEncontrado.Visible = false;
             // 
+            // reportFicha
+            // 
+            this.reportFicha.LocalReport.ReportEmbeddedResource = "menu_clientes.fichaCadastral.rdlc";
+            this.reportFicha.Location = new System.Drawing.Point(12, 89);
+            this.reportFicha.Name = "reportFicha";
+            this.reportFicha.ServerReport.BearerToken = null;
+            this.reportFicha.Size = new System.Drawing.Size(236, 181);
+            this.reportFicha.TabIndex = 5;
+            this.reportFicha.Visible = false;
+            // 
             // FormMenuClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -644,6 +656,7 @@
             this.BackgroundImage = global::menu_clientes.Properties.Resources.backGradiente1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.reportFicha);
             this.Controls.Add(this.nadaEncontrado);
             this.Controls.Add(this.totalInativos);
             this.Controls.Add(this.totalAtivos);
@@ -714,5 +727,6 @@
         private System.Windows.Forms.Label totalAtivos;
         private System.Windows.Forms.Label totalInativos;
         private System.Windows.Forms.Label nadaEncontrado;
+        private Microsoft.Reporting.WinForms.ReportViewer reportFicha;
     }
 }

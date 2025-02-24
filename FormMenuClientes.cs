@@ -33,6 +33,7 @@ namespace menu_clientes
         private void FormMenuClientes_Load(object sender, EventArgs e)
         {
             buscarClientes();
+            //this.reportFicha.RefreshReport();
         }
 
         private void dgLista_Sorted(object sender, EventArgs e)
@@ -211,6 +212,11 @@ namespace menu_clientes
             //Usando condição ternária;
             dgLista.Rows[e.RowIndex].DefaultCellStyle.BackColor = 
                 (e.RowIndex % 2 == 0 ? Color.White : Color.Silver);
+        }
+
+        private void btGerarPDF_Click(object sender, EventArgs e)
+        {
+            Funcoes.ImprimirPDF(reportFicha, "FichaCadastral");
         }
     }
 }

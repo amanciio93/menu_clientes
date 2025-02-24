@@ -2,15 +2,18 @@
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
+using Microsoft.Reporting.WinForms;
+using System.IO;
+using System;
 
 namespace menu_clientes
 {
     internal class Funcoes
     {
 
-        public static void msgErro(string Msg) 
+        public static void msgErro(string Msg)
         {
-            MessageBox.Show(Msg, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);    
+            MessageBox.Show(Msg, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public static void msgAlerta(string Msg)
@@ -48,7 +51,7 @@ namespace menu_clientes
 
             ctr.Text = t;
 
-            if(ctr is TextBox txt)
+            if (ctr is TextBox txt)
                 txt.SelectionStart = txt.Text.Length;
 
             if (ctr is ComboBox cb)
@@ -81,8 +84,40 @@ namespace menu_clientes
 
         public static void carregarDados(ComboBox cb, string tabela, string campo)
         {
-            cb.DataSource = Funcoes.buscaSQL("SELECT DISTINCT " + campo + " FROM " + tabela +" WHERE " + campo + " <> '';");
+            cb.DataSource = Funcoes.buscaSQL("SELECT DISTINCT " + campo + " FROM " + tabela + " WHERE " + campo + " <> '';");
             cb.SelectedIndex = -1;
+        }
+
+        public static void ImprimirPDF(ReportViewer report, string nomeArquivo, ReportParameterCollection p = null)
+        {
+            if (p != null)
+                report.LocalReport.SetParameters(p);
+
+            report.Refresh();
+            report.RefreshReport();
+
+            try
+            {
+                Warning[] warnings;
+                string[] streamids;
+                string mimeType;
+                string encoding;
+                string filenameExtension;
+
+                byte[] bytes = report.LocalReport.Render(
+                "PDF", null, out mimeType, out encoding, out filenameExtension,
+                out streamids, out warnings);
+                using (FileStream fs = new FileStream(nomeArquivo + ".pdf", FileMode.Create))
+                {
+                    fs.Write(bytes, 0, bytes.Length);
+                }
+
+                System.Diagnostics.Process.Start(nomeArquivo + ".pdf");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "C# Cadastro de Clientes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
     }
