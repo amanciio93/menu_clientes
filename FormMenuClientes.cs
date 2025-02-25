@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.Reporting.WinForms;
 
 namespace menu_clientes
 {
@@ -45,6 +46,7 @@ namespace menu_clientes
 
             dgLista.ClearSelection();
             btEditarCliente.Enabled = false;
+            btGerarFicha.Enabled = false;
 
             foreach (DataGridViewRow linha in dgLista.Rows)
             {
@@ -67,6 +69,7 @@ namespace menu_clientes
         private void dgLista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btEditarCliente.Enabled = true;
+            btGerarFicha.Enabled = true;
         }
 
         private void btEditarCliente_Click(object sender, EventArgs e)
@@ -216,7 +219,48 @@ namespace menu_clientes
 
         private void btGerarPDF_Click(object sender, EventArgs e)
         {
-            Funcoes.ImprimirPDF(reportFicha, "FichaCadastral");
+        
+        }
+
+        private void btGerarFicha_Click(object sender, EventArgs e)
+        {
+
+            string id = dgLista.CurrentRow.Cells["id"].Value.ToString();
+
+            DataRow linha = Funcoes.buscaSQL("SELECT * FROM clientes WHERE id = " + id).Rows[0];
+
+            string foto = fotos_clientes + id + ".jpg";
+            if (!File.Exists(foto))
+            {
+                foto = fotos_clientes + "avatar.png";
+            }
+            else
+            {
+                foto = fotos_clientes + id + ".jpg";
+            }
+
+            ReportParameterCollection p = new ReportParameterCollection
+            {
+                new ReportParameter("nome", linha["nome"].ToString()),
+                new ReportParameter("documento", linha["documento"].ToString()),
+                new ReportParameter("rg", linha["rg"].ToString()),
+                new ReportParameter("dt_nascimento", linha["dt_nascimento"].ToString().Replace(" 00:00:00", "")),
+                new ReportParameter("celular", linha["celular"].ToString()),
+                new ReportParameter("email", linha["email"].ToString()),
+                new ReportParameter("genero", linha["genero"].ToString()),
+                new ReportParameter("estado_civil", linha["estado_civil"].ToString()),
+                new ReportParameter("endereco", linha["endereco"].ToString()),
+                new ReportParameter("numero", linha["numero"].ToString()),
+                new ReportParameter("bairro", linha["bairro"].ToString()),
+                new ReportParameter("cidade", linha["cidade"].ToString()),
+                new ReportParameter("estado", linha["estado"].ToString()),
+                new ReportParameter("cep", linha["cep"].ToString()),
+                new ReportParameter("observacoes", linha["observacoes"].ToString()),
+                new ReportParameter("situacao", linha["situacao"].ToString()),
+                new ReportParameter("foto", "File://" + foto)
+            };
+
+            Funcoes.ImprimirPDF(reportFicha, "FichaCadastral", p);
         }
     }
 }

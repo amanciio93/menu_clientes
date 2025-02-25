@@ -12,10 +12,6 @@ C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_clientes.
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\Newtonsoft.Json.dll
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\Newtonsoft.Json.xml
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\obj\Debug\menu_cli.9C039F6E.Up2Date
-C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\Microsoft.ReportViewer.Design.dll
@@ -63,3 +59,15 @@ C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\pt\Microsoft.R
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\x86\SqlServerSpatial160.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\x64\SqlServerSpatial160.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\amanc\source\repos\menu_clientes\menu_clientes\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
