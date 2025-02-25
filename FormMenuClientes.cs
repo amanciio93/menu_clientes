@@ -215,13 +215,8 @@ namespace menu_clientes
             //Usando condição ternária;
             dgLista.Rows[e.RowIndex].DefaultCellStyle.BackColor = 
                 (e.RowIndex % 2 == 0 ? Color.White : Color.Silver);
-        }
-
-        private void btGerarPDF_Click(object sender, EventArgs e)
-        {
+        }        
         
-        }
-
         private void btGerarFicha_Click(object sender, EventArgs e)
         {
 
@@ -261,6 +256,7 @@ namespace menu_clientes
             };
 
             Funcoes.ImprimirPDF(reportFicha, "FichaCadastral", p);
-        }
+        }     
+
     }
 }
